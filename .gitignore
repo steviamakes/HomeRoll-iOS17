@@ -1,0 +1,14 @@
+build/
+build-ipa/
+DerivedData/
+Payload/
+*.xcodeproj/
+*.ipa
+.DS_Store
+# Geheimes / Eigenes
+server/.env
+server/keys.json
+server/data/
+Resources/HeimnetzCA.der
+*.p12
+*.mobileprovision

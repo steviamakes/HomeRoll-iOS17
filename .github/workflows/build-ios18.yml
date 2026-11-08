@@ -1,0 +1,52 @@
+name: Build HomeRoll iOS 18 IPA
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-ipa:
+    runs-on: macos-15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode 16
+        run: |
+          sudo xcode-select -s /Applications/Xcode_16.2.app || sudo xcode-select -s /Applications/Xcode_16.0.app || true
+          xcodebuild -version
+
+      - name: Install XcodeGen
+        run: |
+          if ! command -v xcodegen &> /dev/null; then
+            brew install xcodegen
+          fi
+
+      - name: Generate Xcode Project & Build IPA for iOS 18.0+
+        run: |
+          xcodegen generate
+          rm -rf build-ipa
+          xcodebuild -project HomeRoll.xcodeproj -scheme HomeRoll -configuration Release \
+            -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build-ipa \
+            IPHONEOS_DEPLOYMENT_TARGET=18.0 \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            STRIP_INSTALLED_PRODUCT=YES DEPLOYMENT_POSTPROCESSING=YES STRIP_STYLE=non-global
+
+          APP="build-ipa/Build/Products/Release-iphoneos/HomeRoll.app"
+          rm -rf Payload && mkdir Payload
+          cp -R "$APP" Payload/
+
+          P="Payload/HomeRoll.app"
+          codesign -f -s - --entitlements Widget/FotosWidget.entitlements "$P/PlugIns/FotosWidget.appex"
+          codesign -f -s - --entitlements Share/FotosShare.entitlements "$P/PlugIns/FotosShare.appex"
+          codesign -f -s - --entitlements App/HomeRoll.entitlements "$P"
+
+          zip -qr HomeRoll-iOS18.ipa Payload
+
+      - name: Upload HomeRoll-iOS18.ipa Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: HomeRoll-iOS18-IPA
+          path: HomeRoll-iOS18.ipa
+          if-no-files-found: error

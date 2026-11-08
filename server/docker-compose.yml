@@ -1,0 +1,27 @@
+# Kategorien-Dienst für die Fotos-App: liest Immich-DB (nur Leserechte), setzt Tags „Kategorie/…“ per API.
+services:
+  kategorien:
+    build: .
+    container_name: immich_kategorien
+    restart: always
+    env_file: .env
+    environment:
+      KEYS_FILE: /config/keys.json
+      STATE_DB: /data/state.db
+      INTERVAL: "900"
+    volumes:
+      - ./keys.json:/config/keys.json:ro
+      - ./data:/data
+    networks: [immich]
+  relevanz:
+    build: .
+    container_name: immich_relevanz
+    restart: always
+    env_file: .env
+    command: ["python", "-u", "/app/relevanz.py"]
+    ports: ["2284:2284"]
+    networks: [immich]
+networks:
+  immich:
+    name: immich_default
+    external: true

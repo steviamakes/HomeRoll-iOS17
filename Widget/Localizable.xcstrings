@@ -1,0 +1,56 @@
+{
+  "sourceLanguage" : "de",
+  "strings" : {
+    "Ausgewählte Fotos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Featured Photos"
+          }
+        }
+      }
+    },
+    "Erinnerungen wie „Heute vor 2 Jahren“ aus deiner Mediathek." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memories like “2 Years Ago Today” from your library."
+          }
+        }
+      }
+    },
+    "Jede Stunde ein anderes deiner Lieblingsfotos." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A different favorite photo every hour."
+          }
+        }
+      }
+    },
+    "Öffne die Fotos-App, damit hier Bilder erscheinen." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open HomeRoll so pictures appear here."
+          }
+        }
+      }
+    },
+    "Rückblicke" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memories"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

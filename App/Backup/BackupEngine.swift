@@ -1,0 +1,402 @@
+import Foundation
+import UIKit
+import Photos
+import CryptoKit
+import BackgroundTasks
+
+/// Sichert neue Fotos/Videos vom iPhone auf den eigenen Immich-Server (wie „iCloud-Fotos“, nur ohne Löschen).
+/// - Lädt nur Originale (`.photo`, `.video`, `.pairedVideo`); eine Bearbeitung aus Fotos kommt als eigene Fassung
+///   oben auf das Original (Stapel + Tag „Kategorie/Bearbeitet“) – wie beim iCloud-Import.
+/// - Duplikate erkennt der Server über die SHA1 (`bulk-upload-check`, Header `x-immich-checksum`).
+/// - Ältere Objekte als `importCutoff` liegen schon auf dem Server (z. B. per icloudpd importiert): werden nur geprüft,
+///   wenn sie lokal liegen (kein Nachladen aus iCloud), und nur mit „Ganze Mediathek prüfen“. Ohne Datum wird alles gesichert.
+@MainActor @Observable
+final class BackupEngine {
+    static let shared = BackupEngine()
+    nonisolated static let taskID = "org.homeroll.app.backup"
+
+    enum Phase: Equatable { case idle, scanning, uploading, done, failed(String) }
+
+    var enabled = UserDefaults.standard.object(forKey: "backup.enabled") as? Bool ?? true { didSet { save() } }
+    /// Entwicklung mit echtem Konto: Backup fest aus (FOTOS_BACKUP_OFF), damit nichts hochgeladen wird.
+    private var hardOff: Bool {
+        #if DEBUG
+        ProcessInfo.processInfo.environment["FOTOS_BACKUP_OFF"] != nil
+        #else
+        false
+        #endif
+    }
+    var wifiOnly = UserDefaults.standard.object(forKey: "backup.wifiOnly") as? Bool ?? true { didSet { save() } }
+    var fullLibrary = UserDefaults.standard.bool(forKey: "backup.full") { didSet { save() } }
+    /// Bis hierher ist die Mediathek schon auf dem Server (eigener Import); nil = ganze Mediathek sichern.
+    var importCutoff = UserDefaults.standard.object(forKey: "backup.importCutoff") as? Date { didSet { save() } }
+    var lastRun = UserDefaults.standard.object(forKey: "backup.lastRun") as? Date
+    /// Pausiert bis (wie iCloud-Fotos „Pausieren“: einen Tag lang, auch nachts im Hintergrund); nil = läuft.
+    private(set) var pausedUntil = UserDefaults.standard.object(forKey: "backup.pausedUntil") as? Date
+    var paused: Bool { pausedUntil.map { $0 > Date() } ?? false }
+    /// Noch NICHT auf dem Server laut letztem Lauf (fehlgeschlagene zählen mit – sonst stand „gesichert“ da, obwohl ein
+    /// Video fehlte, 07.11.2026); nil = unbekannt.
+    var pending: Int? { total > 0 ? max(0, total - uploaded - duplicates) : storedPending }
+    private var storedPending = UserDefaults.standard.object(forKey: "backup.pending") as? Int
+
+    var phase: Phase = .idle
+    var total = 0
+    var finished = 0
+    var uploaded = 0
+    var duplicates = 0
+    var failed = 0
+    var current = ""
+    /// Objekte, die (noch) nicht gesichert werden konnten – mit Grund.
+    var problems: [String] = []
+    var running: Bool { phase == .scanning || phase == .uploading }
+    /// Übertragungen aus einer früheren Sitzung, die iOS noch im Hintergrund erledigt
+    var background = 0
+
+    private var task: Task<Void, Never>?
+    private var state: [String: Entry] = [:]
+    private var stateUser = ""
+
+    /// `tagged`: Kategorie-Tags (Bildschirmfotos, Panoramen …) sind sicher auf dem Server; nil = noch nachholen.
+    struct Entry: Codable { var remote: String; var edited: String?; var tagged: Bool? }
+
+    private func save() {
+        let d = UserDefaults.standard
+        d.set(enabled, forKey: "backup.enabled"); d.set(wifiOnly, forKey: "backup.wifiOnly"); d.set(fullLibrary, forKey: "backup.full")
+        d.set(importCutoff, forKey: "backup.importCutoff")
+    }
+
+    // MARK: Start / Hintergrund
+
+    /// Beim App-Start einmal registrieren (vor dem Ende von didFinishLaunching).
+    nonisolated static func registerBackgroundTask() {
+        // Hauptwarteschlange: der Handler läuft dann auf dem MainActor.
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: taskID, using: .main) { t in
+            nonisolated(unsafe) let task = t   // läuft auf .main, wird nur dort benutzt
+            MainActor.assumeIsolated { BackupEngine.shared.handle(task) }
+        }
+    }
+
+    private func handle(_ t: BGTask) {
+        t.expirationHandler = { Task { @MainActor in BackupEngine.shared.cancel(); OfflineSync.shared.stop() } }
+        Task {
+            if !paused { await run() }
+            await OfflineSync.shared.runAndWait()      // danach Vorschauen fürs Offline-Blättern nachladen
+            t.setTaskCompleted(success: phase == .done)
+            schedule()
+        }
+    }
+
+    /// Nachts sichern, wenn das iPhone am Strom und im Netz ist.
+    func schedule() {
+        guard enabled, !hardOff else { BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: Self.taskID); return }
+        let r = BGProcessingTaskRequest(identifier: Self.taskID)
+        r.requiresNetworkConnectivity = true
+        r.requiresExternalPower = true
+        r.earliestBeginDate = Date(timeIntervalSinceNow: 15 * 60)
+        try? BGTaskScheduler.shared.submit(r)
+    }
+
+    /// Im Vordergrund: höchstens alle 10 Minuten automatisch.
+    func runIfDue() {
+        guard enabled, !paused, !running, Date().timeIntervalSince(lastRun ?? .distantPast) > 600 else { return }
+        start()
+    }
+
+    func start() {
+        guard !running, !paused else { return }
+        task = Task {
+            // Weiterlaufen, wenn die App in den Hintergrund geht (iOS gibt dafür begrenzt Zeit; was nicht fertig wird,
+            // gilt als nicht gesichert und kommt beim nächsten Lauf dran)
+            let bg = UIApplication.shared.beginBackgroundTask(withName: "backup") { BackupEngine.shared.cancel() }
+            await run()
+            UIApplication.shared.endBackgroundTask(bg)
+        }
+    }
+
+    /// Wie iCloud-Fotos: einen Tag pausieren (laufender Upload stoppt sofort, Nachtlauf wartet).
+    func pause(for seconds: TimeInterval = 24 * 3600) {
+        pausedUntil = Date(timeIntervalSinceNow: seconds)
+        UserDefaults.standard.set(pausedUntil, forKey: "backup.pausedUntil")
+        cancel()
+        BackgroundUploader.shared.cancelAll()
+    }
+
+    #if DEBUG
+    /// Simulator: Zustände der Mediathek-Fußzeile ansehen, ohne etwas hochzuladen (FOTOS_BACKUP_DEMO=uploading|paused|done|failed).
+    func demo(_ s: String) {
+        total = 988; finished = 312; lastRun = Date(timeIntervalSinceNow: -300)
+        switch s {
+        case "uploading": phase = .uploading
+        case "paused": pausedUntil = Date(timeIntervalSinceNow: 3600)
+        case "failed": phase = .failed(String(localized: "Server nicht erreichbar"))
+        default: total = 0; finished = 0; phase = .done
+        }
+    }
+    #endif
+
+    func resume() {
+        pausedUntil = nil
+        UserDefaults.standard.removeObject(forKey: "backup.pausedUntil")
+        if case .failed = phase { phase = .idle }
+        start()
+    }
+
+    func cancel() { task?.cancel(); task = nil }
+
+    // MARK: Ablauf
+
+    func run() async {
+        guard !running, !hardOff, !paused else { return }
+        problems = []; total = 0; finished = 0; uploaded = 0; duplicates = 0; failed = 0; current = ""
+        phase = .scanning
+        let auth = await PHPhotoLibrary.requestAuthorization(for: .readWrite)
+        guard auth == .authorized || auth == .limited else { phase = .failed(String(localized: "Kein Zugriff auf Fotos – in den Einstellungen erlauben.")); return }
+        let api = ImmichClient.shared
+        guard let me = try? await api.me() else { phase = .failed(String(localized: "Server nicht erreichbar")); return }
+        loadState(user: me.id)
+
+        let opts = PHFetchOptions()
+        opts.includeHiddenAssets = true
+        opts.includeAllBurstAssets = true
+        opts.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        if !fullLibrary, let cutoff = importCutoff { opts.predicate = NSPredicate(format: "creationDate >= %@", cutoff as NSDate) }
+        let result = PHAsset.fetchAssets(with: opts)
+        var todo: [PHAsset] = []
+        result.enumerateObjects { a, _, _ in
+            if a.mediaType == .image || a.mediaType == .video, self.state[a.localIdentifier] == nil { todo.append(a) }
+        }
+        total = todo.count
+        let inFlight = await BackgroundUploader.shared.activeLocalIDs()
+        background = inFlight.count
+        await repairTags(api)
+        phase = .uploading
+
+        for a in todo {
+            if Task.isCancelled { break }
+            if inFlight.contains(a.localIdentifier) { continue }   // läuft schon im Hintergrund (frühere Sitzung)
+            current = PHAssetResource.assetResources(for: a).first?.originalFilename ?? ""
+            do {
+                if let r = try await backup(a) {
+                    let (id, edited, isNew) = r
+                    state[a.localIdentifier] = Entry(remote: id, edited: edited)
+                    if isNew { uploaded += 1 } else { duplicates += 1 }
+                    saveState()
+                    // Tags sofort setzen, nicht erst am Ende des Laufs: wird die App vorher beendet,
+                    // stünde das Bildschirmfoto sonst in der Mediathek, aber nie unter „Bildschirmfotos“.
+                    var ok = true
+                    for (t, ids) in Self.tagPlan(a, Entry(remote: id, edited: edited)) {
+                        do { try await api.tag(ids, with: t) } catch { ok = false }
+                    }
+                    if ok { state[a.localIdentifier]?.tagged = true; saveState() }
+                }
+            } catch is CancellationError {
+                break
+            } catch let e as URLError where e.code == .cancelled {
+                break   // Pausieren bricht den laufenden Upload ab – kein Fehler, das Objekt kommt beim nächsten Lauf dran
+            } catch {
+                failed += 1
+                problems.append("\(current): \(error.localizedDescription)")
+            }
+            finished += 1
+        }
+        current = ""
+        lastRun = Date(); UserDefaults.standard.set(lastRun, forKey: "backup.lastRun")
+        storedPending = max(0, total - uploaded - duplicates); UserDefaults.standard.set(storedPending, forKey: "backup.pending")
+        phase = Task.isCancelled ? .idle : .done
+    }
+
+    /// Ein Objekt sichern → (Server-ID, ID der bearbeiteten Fassung, neu hochgeladen?) oder nil = übersprungen.
+    private func backup(_ a: PHAsset) async throws -> (String, String?, Bool)? {
+        let res = PHAssetResource.assetResources(for: a)
+        let mainType: PHAssetResourceType = a.mediaType == .video ? .video : .photo
+        guard let main = res.first(where: { $0.type == mainType }) else { throw BackupError.noOriginal }
+        // Vor dem Import liegt alles schon auf dem Server: nie aus iCloud nachladen, nur Lokales prüfen.
+        let allowNetwork = importCutoff.map { (a.creationDate ?? .distantPast) >= $0 } ?? true
+        let api = ImmichClient.shared
+
+        // Live Photo: zuerst das Video, damit das Foto darauf zeigen kann.
+        var liveID: String?
+        if a.mediaSubtypes.contains(.photoLive), let pv = res.first(where: { $0.type == .pairedVideo }) {
+            liveID = try await send(pv, of: a, network: allowNetwork, extra: [:], kind: "live").id
+        }
+        var extra: [String: String] = [:]
+        if let liveID { extra["livePhotoVideoId"] = liveID }
+        if a.isFavorite { extra["isFavorite"] = "true" }
+        if a.isHidden { extra["visibility"] = "archive" }
+        if a.mediaType == .video { extra["duration"] = String(Int(a.duration * 1000)) }
+        // Bildschirmfotos (PNG) und Videos tragen keine Zeitzone → Immich zeigte sonst UTC (wie beim iCloud-Import).
+        let needsLocal = a.mediaType == .video || a.mediaSubtypes.contains(.photoScreenshot) || main.uniformTypeIdentifier == "public.png"
+        let local = needsLocal ? Self.localISO(a.creationDate ?? Date()) : nil
+        let r = try await send(main, of: a, network: allowNetwork, extra: extra, localDate: local)
+        if r.isNew, let local { try? await api.update([r.id], ["dateTimeOriginal": local]) }
+
+        // Bearbeitung aus Fotos: gerenderte Fassung oben auf den Stapel (nur für neue Objekte).
+        var editedID: String?
+        if allowNetwork, let full = res.first(where: { $0.type == (a.mediaType == .video ? .fullSizeVideo : .fullSizePhoto) }) {
+            var e: [String: String] = [:]
+            if a.isFavorite { e["isFavorite"] = "true" }
+            if a.isHidden { e["visibility"] = "archive" }
+            let stem = (main.originalFilename as NSString).deletingPathExtension
+            let ext = (full.originalFilename as NSString).pathExtension
+            let er = try await send(full, of: a, network: true, extra: e, name: "\(stem)_bearbeitet.\(ext.isEmpty ? "jpg" : ext)", kind: "edited")
+            if er.isNew { try? await api.createStack([er.id, r.id]) }
+            editedID = er.id
+        }
+        return (r.id, editedID, r.isNew)
+    }
+
+    /// Datei in den Zwischenordner holen, Prüfsumme bilden, beim Server nachfragen, ggf. hochladen.
+    private func send(_ res: PHAssetResource, of a: PHAsset, network: Bool, extra: [String: String],
+                      name: String? = nil, kind: String = "main", localDate: String? = nil) async throws -> (id: String, isNew: Bool) {
+        let file = FileManager.default.temporaryDirectory.appendingPathComponent("backup-\(UUID().uuidString)")
+        defer { try? FileManager.default.removeItem(at: file) }
+        try await Self.write(res, to: file, network: network)
+        let sha1 = try await Task.detached { try Self.sha1(of: file) }.value
+        let api = ImmichClient.shared
+        if let existing = try await api.bulkUploadCheck(id: a.localIdentifier, checksum: sha1) { return (existing, false) }
+        let created = ISO8601DateFormatter().string(from: a.creationDate ?? Date())
+        let modified = ISO8601DateFormatter().string(from: a.modificationDate ?? a.creationDate ?? Date())
+        var fields = ["fileCreatedAt": created, "fileModifiedAt": modified, "filename": name ?? res.originalFilename]
+        fields.merge(extra) { $1 }
+        // Rumpf an einem festen Ort: die Hintergrund-Übertragung braucht ihn, auch wenn die App inzwischen weg ist
+        let dir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0].appendingPathComponent("backup-uploads")
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        let body = dir.appendingPathComponent(UUID().uuidString)
+        let req: URLRequest
+        do {
+            req = try api.prepareUpload(file: file, filename: name ?? res.originalFilename, uti: res.uniformTypeIdentifier,
+                                        fields: fields, checksum: sha1, expensive: !wifiOnly, body: body)
+        } catch { try? FileManager.default.removeItem(at: body); throw error }
+        try? FileManager.default.removeItem(at: file)   // Platz sparen: ab hier zählt nur noch der Rumpf
+        let meta = BackgroundUploader.Meta(user: stateUser, localID: a.localIdentifier, kind: kind, body: body.path,
+                                           localDate: localDate, checksum: sha1)
+        let r = try await BackgroundUploader.shared.upload(req, body: body, meta: meta)
+        return (r.id, r.status != "duplicate")
+    }
+
+    private static func write(_ res: PHAssetResource, to url: URL, network: Bool) async throws {
+        let o = PHAssetResourceRequestOptions()
+        o.isNetworkAccessAllowed = network
+        try await withCheckedThrowingContinuation { (c: CheckedContinuation<Void, Error>) in
+            PHAssetResourceManager.default().writeData(for: res, toFile: url, options: o) { err in
+                if let err { c.resume(throwing: network ? err : BackupError.onlyInICloud) } else { c.resume() }
+            }
+        }
+    }
+
+    /// Zeitpunkt mit Zeitzonen-Versatz des iPhones, z. B. 2026-11-05T00:20:01+01:00.
+    static func localISO(_ d: Date) -> String {
+        let f = ISO8601DateFormatter(); f.timeZone = .current; f.formatOptions = [.withInternetDateTime]
+        return f.string(from: d)
+    }
+
+    nonisolated private static func sha1(of url: URL) throws -> String {
+        let h = try FileHandle(forReadingFrom: url)
+        defer { try? h.close() }
+        var sha = Insecure.SHA1()
+        try h.forEachChunk { sha.update(data: $0) }
+        return sha.finalize().map { String(format: "%02x", $0) }.joined()
+    }
+
+    /// Tag → Server-IDs für ein gesichertes Objekt (Original und ggf. bearbeitete Fassung).
+    private static func tagPlan(_ a: PHAsset, _ e: Entry) -> [String: [String]] {
+        var plan: [String: [String]] = [:]
+        for t in tags(for: a) { plan[t, default: []].append(e.remote) }
+        if let edited = e.edited { plan["Kategorie/Bearbeitet", default: []].append(edited) }
+        return plan
+    }
+
+    /// Holt Tags nach, die frühere Läufe nicht mehr setzen konnten (App beendet, Netz weg).
+    /// Gesammelt je Tag in Paketen, damit auch viele Objekte nur wenige Anfragen kosten.
+    private func repairTags(_ api: ImmichClient) async {
+        let open = state.filter { $0.value.tagged != true }
+        guard !open.isEmpty else { return }
+        var plan: [String: [String]] = [:]
+        let found = PHAsset.fetchAssets(withLocalIdentifiers: Array(open.keys), options: nil)
+        found.enumerateObjects { a, _, _ in
+            guard let e = open[a.localIdentifier] else { return }
+            for (t, ids) in Self.tagPlan(a, e) { plan[t, default: []] += ids }
+        }
+        for (t, ids) in plan {
+            for i in stride(from: 0, to: ids.count, by: 500) {
+                guard (try? await api.tag(Array(ids[i..<min(i + 500, ids.count)]), with: t)) != nil else { return }
+            }
+        }
+        // auch vom iPhone Gelöschte abhaken: deren Art kennt nur noch der Server
+        for id in open.keys { state[id]?.tagged = true }
+        saveState()
+    }
+
+    /// Was nur das iPhone weiß – gleiche Tag-Namen wie Server-Kategorien und iCloud-Import.
+    static func tags(for a: PHAsset) -> [String] {
+        var t: [String] = []
+        let s = a.mediaSubtypes
+        if s.contains(.photoScreenshot) { t.append("Bildschirmfotos") }
+        if s.contains(.photoPanorama) { t.append("Panoramen") }
+        if s.contains(.photoDepthEffect) { t.append("Porträt") }
+        if s.contains(.videoTimelapse) { t.append("Zeitraffer") }
+        if s.contains(.videoHighFrameRate) { t.append("Slo-Mo") }
+        if s.contains(.videoCinematic) { t.append("Kino") }
+        if a.burstIdentifier != nil { t.append("Serien") }
+        return t.map { "Kategorie/\($0)" }
+    }
+
+    /// Ergebnis einer Hintergrund-Übertragung, deren Ende die App nicht mehr selbst erlebt hat (beendet/eingefroren).
+    /// Nur das Hauptobjekt ohne bearbeitete Fassung wird direkt übernommen; alles andere holt der nächste Lauf nach
+    /// (der Server erkennt die Datei dann an der Prüfsumme, es wird nichts doppelt geladen).
+    func adopt(_ r: ImmichClient.UploadResult, meta: BackgroundUploader.Meta) async {
+        PerfLog.mark("Hintergrund-Übertragung fertig (\(meta.kind))")
+        background = max(0, background - 1)
+        guard meta.kind == "main", !meta.user.isEmpty else { return }
+        loadState(user: meta.user)
+        guard state[meta.localID] == nil else { return }
+        let a = PHAsset.fetchAssets(withLocalIdentifiers: [meta.localID], options: nil).firstObject
+        let edited = a.map { PHAssetResource.assetResources(for: $0).contains { $0.type == .fullSizePhoto || $0.type == .fullSizeVideo } } ?? false
+        guard !edited else { return }
+        state[meta.localID] = Entry(remote: r.id, edited: nil)   // Tags holt repairTags beim nächsten Lauf nach
+        saveState()
+        if r.status != "duplicate", let d = meta.localDate { try? await ImmichClient.shared.update([r.id], ["dateTimeOriginal": d]) }
+        if let p = storedPending, p > 0 { storedPending = p - 1; UserDefaults.standard.set(p - 1, forKey: "backup.pending") }
+    }
+
+    // MARK: Gedächtnis (je Server-Nutzer, damit Test- und echtes Konto getrennt bleiben)
+
+    private var stateURL: URL {
+        let dir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        return dir.appendingPathComponent("backup-\(stateUser).json")
+    }
+    private func loadState(user: String) {
+        guard user != stateUser else { return }
+        stateUser = user
+        state = (try? JSONDecoder().decode([String: Entry].self, from: Data(contentsOf: stateURL))) ?? [:]
+    }
+    private func saveState() {
+        if let d = try? JSONEncoder().encode(state) { try? d.write(to: stateURL, options: .atomic) }
+    }
+    var backedUpCount: Int { state.count }
+
+    // MARK: Speicher freigeben (für FreeUpSection)
+
+    /// Gesicherte iPhone-Objekte mit ihrer Server-ID (nur das angemeldete Konto).
+    func backedUp() async -> [String: String] {
+        guard let me = try? await ImmichClient.shared.me() else { return [:] }
+        loadState(user: me.id)
+        return state.mapValues(\.remote)
+    }
+    /// Nach dem Löschen auf dem iPhone die lokalen IDs vergessen.
+    func forget(_ localIDs: [String]) {
+        for id in localIDs { state[id] = nil }
+        saveState()
+    }
+
+    enum BackupError: LocalizedError {
+        case noOriginal, onlyInICloud
+        var errorDescription: String? {
+            switch self {
+            case .noOriginal: String(localized: "Kein Original gefunden")
+            case .onlyInICloud: String(localized: "Liegt nur in iCloud (nicht auf dem iPhone)")
+            }
+        }
+    }
+}

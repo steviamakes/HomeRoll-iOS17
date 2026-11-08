@@ -1,0 +1,161 @@
+import CoreSpotlight
+import SwiftUI
+
+@main
+struct FotosApp: App {
+    @UIApplicationDelegateAdaptor(HomeRollAppDelegate.self) private var delegate
+    @State private var app = AppModel()
+    @State private var timeline = TimelineStore()
+
+    init() {
+        BackupEngine.registerBackgroundTask()
+        BackgroundUploader.shared.reconnect()   // Ergebnisse von Übertragungen aus früheren Sitzungen abholen
+        PerfLog.start()
+    }
+
+    var body: some Scene {
+        WindowGroup {
+            Group {
+                if app.loggedIn { RootView() } else { LoginView() }
+            }
+            .environment(app)
+            .environment(timeline)
+            .preferredColorScheme(.dark)
+            .onReceive(NotificationCenter.default.publisher(for: .sessionExpired)) { _ in
+                app.loggedIn = false
+            }
+            // Tippen auf einen Treffer in der iPhone-Suche → wie ein homeroll://-Link
+            .onContinueUserActivity(CSSearchableItemActionType) { act in
+                if let s = act.userInfo?[CSSearchableItemActivityIdentifier] as? String, let url = URL(string: s) {
+                    NotificationCenter.default.post(name: .openFotosURL, object: url)
+                }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .openSearch)) { n in
+                app.pendingQuery = n.object as? String
+                app.viewer = nil; app.showSearch = true
+            }
+        }
+    }
+}
+
+enum Tab: Hashable { case library, collections }
+enum LibraryScale: String, CaseIterable, Identifiable {
+    case years = "Jahre", months = "Monate", all = "Alle"
+    var id: String { rawValue }
+}
+
+/// Filter/Sortierung der Mediathek – wie das Menü neben „Auswählen“ in Fotos.
+enum LibraryFilter: String, CaseIterable, Identifiable {
+    case all, favorites, edited, photos, videos, livePhotos, portrait, screenshots, shared, notInAlbum
+    var id: String { rawValue }
+    var title: String {
+        switch self {
+        case .all: String(localized: "Alle Objekte"); case .favorites: String(localized: "Favoriten"); case .edited: String(localized: "Bearbeitet"); case .photos: String(localized: "Fotos")
+        case .videos: "Videos"; case .livePhotos: "Live Photos"; case .portrait: "Porträt"
+        case .screenshots: "Bildschirmfotos"; case .shared: "Geteilt mit dir"; case .notInAlbum: "In keinem Album"
+        }
+    }
+    var icon: String {
+        switch self {
+        case .all: "square.grid.3x3"; case .favorites: "heart"; case .edited: "slider.horizontal.3"; case .photos: "photo"
+        case .videos: "video"; case .livePhotos: "livephoto"; case .portrait: "cube"; case .screenshots: "camera.viewfinder"; case .shared: "person.2"; case .notInAlbum: "rectangle.stack.badge.minus"
+        }
+    }
+}
+
+struct ViewerRequest: Identifiable {
+    let id = UUID()
+    let assets: [Asset]
+    let index: Int
+}
+
+@MainActor @Observable
+final class AppModel {
+    var loggedIn = ImmichClient.shared.isLoggedIn
+    /// Abmelden (Konto-Menü, oder „Server nicht erreichbar“ in der Mediathek → anderen Server wählen)
+    func signOut(_ timeline: TimelineStore) {
+        ImmichClient.shared.logout(); timeline.clearCache(); MemoryCenter.shared.reset(); SpotlightIndex.clear(); loggedIn = false
+    }
+    var tab: Tab = .library
+    /// Backup-Fenster (aus der Mediathek-Fußzeile)
+    var showBackup = false
+    var scale: LibraryScale = .all
+    var showSearch = false
+    /// Suchbegriff aus Siri/Kurzbefehlen (wird von der Suche übernommen)
+    var pendingQuery: String?
+    /// Aus Spotlight/Link: diese Sammlung öffnen (CollectionsView übernimmt sie in den Navigationspfad)
+    var pendingRoute: CollectionRoute?
+    var viewer: ViewerRequest?
+    /// Rückblick, der gerade abgespielt wird (Vollbild)
+    var memory: Memory?
+    /// Ziel für „springe zu“ zwischen Jahre → Monate → Alle (timeBucket-ID).
+    var scrollTarget: String?
+    /// „In ‚Alle Fotos‘ anzeigen“: Mediathek springt zu diesem Objekt.
+    var revealID: String?
+    func reveal(_ id: String) {
+        endSelection(); scale = .all; tab = .library; revealID = id
+    }
+    /// „In Mediathek zeigen“ (REA: PXPhotoKitShowInLibraryActionPerformer) aus Einzelansicht, Sammlung oder Suche:
+    /// erst Einzelansicht/Suche schließen, dann in der Mediathek hinspringen.
+    func showInLibrary(_ id: String) {
+        let covered = viewer != nil || showSearch
+        viewer = nil; showSearch = false; memory = nil
+        if covered { Task { try? await Task.sleep(for: .milliseconds(450)); reveal(id) } } else { reveal(id) }
+    }
+    /// Gilt das Objekt außerhalb der Mediathek (Sammlung, Suche)? Dann bietet das Menü „In Mediathek zeigen“ an.
+    var outsideLibrary: Bool { tab != .library || showSearch }
+    var userName = ""
+    var userID = ""
+
+    // Mediathek-Menü (bleibt gespeichert)
+    var sortByAdded = UserDefaults.standard.bool(forKey: "lib.sortByAdded") { didSet { save() } }
+    var filter = LibraryFilter(rawValue: UserDefaults.standard.string(forKey: "lib.filter") ?? "") ?? .all { didSet { save() } }
+    var aspectGrid = UserDefaults.standard.bool(forKey: "lib.aspect") { didSet { save() } }
+    var autoplay = UserDefaults.standard.object(forKey: "lib.autoplay") as? Bool ?? true { didSet { UserDefaults.standard.set(autoplay, forKey: "lib.autoplay") } }
+    var showScreenshots = UserDefaults.standard.object(forKey: "lib.showShots") as? Bool ?? true { didSet { save() } }
+    var showShared = UserDefaults.standard.object(forKey: "lib.showShared") as? Bool ?? true { didSet { save() } }
+    var columns = GridZoom.normalized(UserDefaults.standard.object(forKey: "lib.columns") as? Int ?? 3) { didSet { save() } }
+    var libraryCustomized: Bool { sortByAdded || filter != .all || !showScreenshots || !showShared }
+    private func save() {
+        let d = UserDefaults.standard
+        d.set(sortByAdded, forKey: "lib.sortByAdded"); d.set(filter.rawValue, forKey: "lib.filter"); d.set(aspectGrid, forKey: "lib.aspect")
+        d.set(showScreenshots, forKey: "lib.showShots"); d.set(showShared, forKey: "lib.showShared"); d.set(columns, forKey: "lib.columns")
+    }
+
+    // Auswahl
+    var selecting = false
+    var selected: Set<String> = []
+    func toggle(_ id: String) { if selected.contains(id) { selected.remove(id) } else { selected.insert(id) } }
+    func endSelection() { selecting = false; selected = [] }
+
+    /// Kurze Statusanzeige (z. B. „Wird vorbereitet …“ beim Teilen).
+    var busy: String?
+    /// Bogen aus Menüs (Album, Datum, Ort, Diashow)
+    var sheet: ActionSheet?
+    /// „Ausgeblendet“ / „Zuletzt gelöscht“ entsperrt (bis die App in den Hintergrund geht)
+    var privateUnlocked = false
+    var toastText: String?
+    func toast(_ t: String) {
+        withAnimation(.snappy) { toastText = t }
+        Task { try? await Task.sleep(for: .seconds(1.8)); withAnimation(.snappy) { if toastText == t { toastText = nil } } }
+    }
+    /// Untere Leiste in der Mediathek aufgeklappt (Mediathek/Sammlungen wie bei Apple)
+    var tabsExpanded = false
+
+    /// Kachel, in die die Einzelansicht beim Schließen zurückzoomt.
+    var zoomID = ""
+
+    func open(_ assets: [Asset], at index: Int) {
+        guard !assets.isEmpty else { return }
+        var i = min(max(index, 0), assets.count - 1)
+        zoomID = assets[i].id
+        // Einzelansicht baut je Objekt Seite + Vorschauleiste → bei 80 000 Objekten Sekunden zum Auf-/Abbauen.
+        // Ein Fenster von 1 000 um das angetippte Foto reicht zum Wischen.
+        var list = assets
+        if assets.count > 1001 {
+            let lo = max(0, i - 500), hi = min(assets.count, lo + 1001)
+            list = Array(assets[max(0, hi - 1001)..<hi]); i -= max(0, hi - 1001)
+        }
+        viewer = ViewerRequest(assets: list, index: i)
+    }
+}
