@@ -205,7 +205,7 @@ enum MemoryExport {
         try? cv.insertTimeRange(range, of: vt, at: .zero)
         try? ca.insertTimeRange(range, of: at, at: .zero)
         guard let ex = AVAssetExportSession(asset: comp, presetName: AVAssetExportPresetPassthrough) else { return false }
-        do { try await ex.export(to: out, as: .mp4) } catch { return false }
+        do { try await ex.compatExport(to: out, as: .mp4) } catch { return false }
         return true
     }
 }

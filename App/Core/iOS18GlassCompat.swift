@@ -1,3 +1,5 @@
+import AVFoundation
+import UniformTypeIdentifiers
 import SwiftUI
 import MapKit
 import CoreLocation
@@ -106,5 +108,25 @@ public extension MKMapItem {
     var address: AddressCompat? {
         let parts = [placemark.thoroughfare, placemark.locality, placemark.country].compactMap { $0 }
         return parts.isEmpty ? nil : AddressCompat(shortAddress: parts.joined(separator: ", "))
+    }
+}
+
+// Совместимость AVAssetExportSession для iOS 17.0+ (метод export(to:as:) появился в iOS 18)
+public extension AVAssetExportSession {
+    func compatExport(to url: URL, as fileType: AVFileType) async throws {
+        if #available(iOS 18.0, *), let utType = UTType(fileType.rawValue) {
+            try await self.export(to: url, as: utType)
+            return
+        }
+        self.outputURL = url
+        self.outputFileType = fileType
+        await withCheckedContinuation { (cont: CheckedContinuation<Void, Never>) in
+            self.exportAsynchronously {
+                cont.resume()
+            }
+        }
+        if let err = self.error {
+            throw err
+        }
     }
 }

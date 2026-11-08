@@ -252,7 +252,7 @@ struct VideoTrimView: View {
                 ex.videoComposition = vc
                 ex.audioTimePitchAlgorithm = .varispeed
                 ex.metadata = meta
-                try await ex.export(to: out, as: .mov)
+                try await ex.compatExport(to: out, as: .mov)
             } else {
             let comp = AVMutableComposition()
             let range = CMTimeRange(start: CMTime(seconds: start, preferredTimescale: 600),
@@ -271,7 +271,7 @@ struct VideoTrimView: View {
             // Ort, Kamera, Aufnahmedatum vom Original mitnehmen
             guard let ex = AVAssetExportSession(asset: comp, presetName: AVAssetExportPresetPassthrough) else { throw APIError.badURL }
             ex.metadata = meta
-            try await ex.export(to: out, as: .mov)
+            try await ex.compatExport(to: out, as: .mov)
             }
             saving = String(localized: "Wird gesichert …")
             let name = ((dto.originalFileName ?? "VIDEO") as NSString).deletingPathExtension + "_bearbeitet.mov"
