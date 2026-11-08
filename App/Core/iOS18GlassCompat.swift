@@ -114,8 +114,8 @@ public extension MKMapItem {
 // Совместимость AVAssetExportSession для iOS 17.0+ (метод export(to:as:) появился в iOS 18)
 public extension AVAssetExportSession {
     func compatExport(to url: URL, as fileType: AVFileType) async throws {
-        if #available(iOS 18.0, *), let utType = UTType(fileType.rawValue) {
-            try await self.export(to: url, as: utType)
+        if #available(iOS 18.0, *) {
+            try await self.export(to: url, as: fileType)
             return
         }
         self.outputURL = url
