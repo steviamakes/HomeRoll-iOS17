@@ -1,6 +1,8 @@
 import SwiftUI
+import MapKit
+import CoreLocation
 
-/// Совместимость Liquid Glass (iOS 26) для работы на iOS 18.0+.
+/// Совместимость Liquid Glass и новых API (iOS 26) для работы на iOS 18.0+.
 /// На iOS 18 эмулирует стеклянные капсулы и кнопки через нативный `.ultraThinMaterial` с легким бликом рамки.
 public struct GlassCompatStyle: Sendable {
     public var tintColor: Color?
@@ -45,7 +47,7 @@ public extension View {
                     if let tint = style.tintColor {
                         shape.fill(tint)
                     }
-                    shape.strokeBorder(.white.opacity(0.16), lineWidth: 0.6)
+                    shape.stroke(Color.white.opacity(0.18), lineWidth: 0.7)
                 }
             }
             .clipShape(shape)
@@ -78,7 +80,7 @@ public struct GlassCompatButtonStyle: ButtonStyle {
                 } else {
                     Capsule()
                         .fill(.ultraThinMaterial)
-                        .overlay(Capsule().strokeBorder(.white.opacity(0.18), lineWidth: 0.6))
+                        .overlay(Capsule().stroke(Color.white.opacity(0.18), lineWidth: 0.7))
                 }
             }
             .scaleEffect(configuration.isPressed ? 0.96 : 1.0)
@@ -89,4 +91,20 @@ public struct GlassCompatButtonStyle: ButtonStyle {
 public extension ButtonStyle where Self == GlassCompatButtonStyle {
     static var glass: GlassCompatButtonStyle { GlassCompatButtonStyle(prominent: false) }
     static var glassProminent: GlassCompatButtonStyle { GlassCompatButtonStyle(prominent: true) }
+}
+
+// Совместимость MapKit для iOS 18 (в iOS 26 появились MKMapItem.location и MKMapItem.address)
+public extension MKMapItem {
+    var location: CLLocation {
+        placemark.location ?? CLLocation(latitude: placemark.coordinate.latitude, longitude: placemark.coordinate.longitude)
+    }
+
+    struct AddressCompat {
+        public let shortAddress: String?
+    }
+
+    var address: AddressCompat? {
+        let parts = [placemark.thoroughfare, placemark.locality, placemark.country].compactMap { $0 }
+        return parts.isEmpty ? nil : AddressCompat(shortAddress: parts.joined(separator: ", "))
+    }
 }
