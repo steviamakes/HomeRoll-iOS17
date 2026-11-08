@@ -119,7 +119,7 @@ struct Uploader {
 }
 
 /// Heimnetz-Zertifikat (wie in der App) als zusätzlicher Anker.
-final class TrustHomeCA: NSObject, URLSessionDelegate {
+final class TrustHomeCA: NSObject, URLSessionDelegate, @unchecked Sendable {
     private let anchor: SecCertificate? = {
         guard let url = Bundle.main.url(forResource: "HeimnetzCA", withExtension: "der"), let d = try? Data(contentsOf: url) else { return nil }
         return SecCertificateCreateWithData(nil, d as CFData)
