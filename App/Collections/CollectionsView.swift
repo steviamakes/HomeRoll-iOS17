@@ -120,7 +120,7 @@ struct CollectionsView: View {
         NavigationStack(path: $path) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 30) {
-                    Color.clear.frame(height: 64)
+                    Color.clear.frame(height: 82)
                     ForEach(order, id: \.self) { sec in sectionView(sec) }
                 }
                 .padding(.bottom, 120)

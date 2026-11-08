@@ -3,7 +3,7 @@ import SwiftUI
 struct LoginView: View {
     @Environment(AppModel.self) private var app
     /// Nur vorbelegt – gespeichert wird die Adresse erst nach erfolgreicher Anmeldung (ImmichClient.login)
-    @State private var server = UserDefaults.standard.string(forKey: "serverURL") ?? ""
+    @State private var server = UserDefaults.standard.string(forKey: "serverURL") ?? "http://192.168.1.3:2283"
     @State private var email = ""
     @State private var password = ""
     @State private var busy = false

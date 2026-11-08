@@ -2,7 +2,7 @@ name: HomeRoll
 options:
   bundleIdPrefix: org.homeroll
   deploymentTarget:
-    iOS: "18.0"
+    iOS: "17.0"
   createIntermediateGroups: true
   developmentLanguage: de
 settings:
@@ -52,6 +52,7 @@ targets:
           - CFBundleURLName: org.homeroll.app
             CFBundleURLSchemes: [homeroll]
         NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
           NSAllowsLocalNetworking: true
     settings:
       base:
@@ -86,6 +87,7 @@ targets:
               NSExtensionActivationSupportsImageWithMaxCount: 50
               NSExtensionActivationSupportsMovieWithMaxCount: 20
         NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
           NSAllowsLocalNetworking: true
     settings:
       base:

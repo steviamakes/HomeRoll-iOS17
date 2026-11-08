@@ -28,13 +28,13 @@ jobs:
             brew install xcodegen
           fi
 
-      - name: Generate Xcode Project & Build IPA for iOS 18.0+
+      - name: Generate Xcode Project & Build IPA for iOS 17.0+
         run: |
           xcodegen generate
           rm -rf build-ipa
           xcodebuild -project HomeRoll.xcodeproj -scheme HomeRoll -configuration Release \
             -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build-ipa \
-            IPHONEOS_DEPLOYMENT_TARGET=18.0 \
+            IPHONEOS_DEPLOYMENT_TARGET=17.0 \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
             STRIP_INSTALLED_PRODUCT=YES DEPLOYMENT_POSTPROCESSING=YES STRIP_STYLE=non-global
 

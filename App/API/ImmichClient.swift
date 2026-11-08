@@ -99,10 +99,23 @@ final class ImmichClient: NSObject, URLSessionDelegate, @unchecked Sendable {
     /// Eingabe → Server-Adresse, unter der wirklich Immich antwortet. Ohne http(s):// erst https, dann http (Heimnetz).
     private func findServer(_ input: String) async throws -> URL {
         var s = input.trimmingCharacters(in: .whitespacesAndNewlines)
+        if s.isEmpty { s = "http://192.168.1.3:2283" }
         while s.hasSuffix("/") { s.removeLast() }
         if s.lowercased().hasSuffix("/api") { s.removeLast(4) }
         let hasScheme = s.lowercased().hasPrefix("http://") || s.lowercased().hasPrefix("https://")
-        let tries = (hasScheme ? [s] : ["https://" + s, "http://" + s]).compactMap(Self.validBase)
+        var candidates: [String] = []
+        if hasScheme {
+            candidates.append(s)
+            if let u = URL(string: s), u.port == nil, let h = u.host(), let sc = u.scheme {
+                candidates.append("\(sc)://\(h):2283")
+            }
+        } else {
+            // В локальной сети сначала пробуем http:// (и с портом :2283, если порт не указан), затем https://
+            candidates.append("http://" + s)
+            if !s.contains(":") { candidates.append("http://" + s + ":2283") }
+            candidates.append("https://" + s)
+        }
+        let tries = candidates.compactMap(Self.validBase)
         guard !tries.isEmpty else { throw s.contains("@") && !s.contains("/") ? APIError.emailAsServer : APIError.badURL }
         var reached = false, lastError: Error?
         for u in tries {

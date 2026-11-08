@@ -67,8 +67,12 @@ struct RootView: View {
             Task { try? await Task.sleep(for: .seconds(6)); withAnimation(.snappy) { app.tabsExpanded = false } }
         }
         .fullScreenCover(item: $app.viewer) { req in
-            ViewerView(assets: req.assets, start: req.index)
-                .navigationTransition(.zoom(sourceID: app.zoomID, in: zoom))
+            if #available(iOS 18.0, *) {
+                ViewerView(assets: req.assets, start: req.index)
+                    .navigationTransition(.zoom(sourceID: app.zoomID, in: zoom))
+            } else {
+                ViewerView(assets: req.assets, start: req.index)
+            }
         }
         .fullScreenCover(isPresented: $app.showSearch) { SearchView() }
         // Tippen aufs Widget: homeroll://memory/<id> bzw. homeroll://asset/<id>

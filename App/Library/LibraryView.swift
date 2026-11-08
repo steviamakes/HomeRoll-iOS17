@@ -222,7 +222,7 @@ struct AllGrid: View {
         let items = cells
         let app = self.app, timeline = self.timeline, query = self.query
         PhotoGrid(items: items, columns: app.columns,
-                  topInset: app.libraryCustomized ? 120 : 0, controller: grid,
+                  topInset: 130, controller: grid,
                   fit: app.aspectGrid, selection: app.selecting ? app.selected : nil, highlight: highlight, me: app.userID,
                   onTop: { i in
                       guard i < items.count else { return }
@@ -454,7 +454,7 @@ extension EnvironmentValues {
 }
 extension View {
     @ViewBuilder func zoomSource(_ id: String, _ ns: Namespace.ID?) -> some View {
-        if let ns { matchedTransitionSource(id: id, in: ns) } else { self }
+        if #available(iOS 18.0, *), let ns { matchedTransitionSource(id: id, in: ns) } else { self }
     }
 }
 
@@ -470,12 +470,12 @@ struct MonthsList: View {
     var body: some View {
         ScrollViewReader { proxy in
             List {
-                Color.clear.frame(height: 110).plainRow()
+                Color.clear.frame(height: 130).plainRow()
                 ForEach(timeline.buckets) { b in
                     MonthHeader(bucket: b).id(b.timeBucket).plainRow()
                     MonthDays(bucket: b, subtitle: $subtitle)
                 }
-                Color.clear.frame(height: 100).id("ende").plainRow()
+                Color.clear.frame(height: 130).id("ende").plainRow()
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)

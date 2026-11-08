@@ -174,7 +174,7 @@ struct AssetGridScreen: View {
             .padding(.top, 130)
             .padding(.bottom, 110)
         }
-        .defaultScrollAnchor(newestFirst ? .top : .bottom, for: .initialOffset)
+        .defaultScrollAnchor(newestFirst ? .top : .bottom)
         .ignoresSafeArea(edges: .top)
     }
 }
