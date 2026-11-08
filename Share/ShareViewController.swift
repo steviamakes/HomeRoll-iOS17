@@ -29,9 +29,31 @@ final class ShareModel {
     var running = false
     var finished = false
     var error: String?
-    let access = AppGroup.loadAccess()
+    var access = AppGroup.loadAccess()
+
+    func ensureAccess() async {
+        if access != nil { return }
+        if let local = AppGroup.loadAccess() { access = local; error = nil; return }
+        let candidates = [
+            "http://192.168.1.3:2283/api/auth/share-session",
+            "http://localhost:2283/api/auth/share-session"
+        ]
+        let session = URLSession(configuration: .default, delegate: TrustHomeCA(), delegateQueue: nil)
+        for uStr in candidates {
+            guard let u = URL(string: uStr) else { continue }
+            var req = URLRequest(url: u); req.timeoutInterval = 3
+            if let (data, resp) = try? await session.data(for: req),
+               (resp as? HTTPURLResponse)?.statusCode == 200,
+               let remote = try? JSONDecoder().decode(AppGroup.Access.self, from: data),
+               !remote.server.isEmpty, !remote.token.isEmpty {
+                access = remote; AppGroup.saveAccess(remote); error = nil; return
+            }
+        }
+        error = String(localized: "Bitte zuerst die Fotos-App öffnen und anmelden.")
+    }
 
     func upload() async {
+        if access == nil { await ensureAccess() }
         guard let access, let base = URL(string: access.server) else { error = String(localized: "Bitte zuerst die Fotos-App öffnen und anmelden."); return }
         running = true
         let up = Uploader(base: base, token: access.token)
@@ -165,7 +187,7 @@ struct ShareView: View {
             .navigationTitle(String(localized: "Fotos")).navigationBarTitleDisplayMode(.inline)
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button(String(localized: "Abbrechen"), action: close).disabled(model.running) } }
         }
-        .onAppear { if model.access == nil { model.error = String(localized: "Bitte zuerst die Fotos-App öffnen und anmelden.") } }
+        .task { await model.ensureAccess() }
     }
     private var title: String {
         let n = model.providers.count

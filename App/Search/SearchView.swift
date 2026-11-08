@@ -36,6 +36,7 @@ enum SearchToken: Hashable, Identifiable {
 /// Medienart, Jahr) kombinierbar, Ergebnisse geteilt in „Fotos“ und „Sammlungen“, mit „Auswählen“.
 /// Freitext geht an die Texterkennung und die KI-Suche des Servers (mehrsprachiges Bild-Text-Modell).
 struct SearchView: View {
+    var isTab: Bool = false
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
     @Environment(TimelineStore.self) private var timeline
@@ -85,7 +86,7 @@ struct SearchView: View {
         .actionSheets($sheet)
         .overlay(alignment: .top) { VStack { BusyBadge(); ToastBadge() } }
         .task {
-            focused = true
+            if !isTab { focused = true }
             async let c = try? ImmichClient.shared.cities()
             async let p = try? ImmichClient.shared.people()
             async let m: Void = model.reloadAlbums()
@@ -112,10 +113,12 @@ struct SearchView: View {
 
     private var searchBar: some View {
         HStack(spacing: 12) {
-            Button { app.tab = .collections; dismiss() } label: {
-                Image(systemName: "square.stack.fill").font(.system(size: 20)).foregroundStyle(.white).frame(width: 54, height: 54).contentShape(.rect)
+            if !isTab {
+                Button { app.tab = .albums; dismiss() } label: {
+                    Image(systemName: "square.stack.fill").font(.system(size: 20)).foregroundStyle(.white).frame(width: 54, height: 54).contentShape(.rect)
+                }
+                .glassEffect(.regular.interactive(), in: .circle)
             }
-            .glassEffect(.regular.interactive(), in: .circle)
             HStack(spacing: 6) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
                 ForEach(tokens) { t in
@@ -146,14 +149,16 @@ struct SearchView: View {
                     Button { query = ""; tokens = [] } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary) }
                 }
             }
-            .padding(.horizontal, 16).frame(height: 54)
+            .padding(.horizontal, 16).frame(height: 50)
             .glassEffect(.regular.interactive(), in: .capsule)
-            Button { dismiss() } label: {
-                Image(systemName: "xmark").font(.system(size: 18, weight: .semibold)).foregroundStyle(.white).frame(width: 54, height: 54).contentShape(.rect)
+            if !isTab {
+                Button { dismiss() } label: {
+                    Image(systemName: "xmark").font(.system(size: 18, weight: .semibold)).foregroundStyle(.white).frame(width: 54, height: 54).contentShape(.rect)
+                }
+                .glassEffect(.regular.interactive(), in: .circle)
             }
-            .glassEffect(.regular.interactive(), in: .circle)
         }
-        .padding(.horizontal, 20).padding(.bottom, 6)
+        .padding(.horizontal, 20).padding(.bottom, isTab ? 62 : 6)
     }
 
     // MARK: Startseite (leeres Feld)
@@ -382,7 +387,7 @@ struct SearchView: View {
         .font(.system(size: 20, weight: .medium))
         .foregroundStyle(.white)
         .buttonStyle(.plain)
-        .padding(.horizontal, 20).padding(.bottom, 6)
+        .padding(.horizontal, 20).padding(.bottom, isTab ? 62 : 6)
         .confirmationDialog("", isPresented: $confirmDelete) {
             Button(String(localized: "\(AssetActions.noun(chosen)) löschen"), role: .destructive) {
                 AssetActions.delete(Array(selected), timeline: timeline); endSelection()

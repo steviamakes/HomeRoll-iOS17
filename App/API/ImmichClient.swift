@@ -51,6 +51,7 @@ final class ImmichClient: NSObject, URLSessionDelegate, @unchecked Sendable {
         if let s = UserDefaults.standard.string(forKey: "serverURL"), let u = Self.validBase(s) { baseURL = u }
         else { UserDefaults.standard.removeObject(forKey: "serverURL") }
         token = baseURL != nil ? Keychain.get("accessToken") : nil
+        if let baseURL, let token { AppGroup.saveAccess(.init(server: baseURL.absoluteString, token: token)) }
         #if DEBUG
         // Simulator-Tests: Token/Server per Startumgebung (SIMCTL_CHILD_FOTOS_*), kein Passwort-Tippen.
         let env = ProcessInfo.processInfo.environment
@@ -80,6 +81,7 @@ final class ImmichClient: NSObject, URLSessionDelegate, @unchecked Sendable {
             // erst nach erfolgreicher Anmeldung merken
             UserDefaults.standard.set(url.absoluteString, forKey: "serverURL")
             Keychain.set(r.accessToken, for: "accessToken")
+            AppGroup.saveAccess(.init(server: url.absoluteString, token: r.accessToken))
             return r
         } catch {
             baseURL = old

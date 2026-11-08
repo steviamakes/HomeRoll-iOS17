@@ -1,56 +1,86 @@
 {
-  "sourceLanguage" : "de",
-  "strings" : {
-    "Ausgewählte Fotos" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Featured Photos"
+  "sourceLanguage": "de",
+  "strings": {
+    "Ausgewählte Fotos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Featured Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Рекомендованные фото"
           }
         }
       }
     },
-    "Erinnerungen wie „Heute vor 2 Jahren“ aus deiner Mediathek." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Memories like “2 Years Ago Today” from your library."
+    "Erinnerungen wie „Heute vor 2 Jahren“ aus deiner Mediathek.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memories like “2 Years Ago Today” from your library."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспоминания вроде «2 года назад в этот день» из вашей медиатеки."
           }
         }
       }
     },
-    "Jede Stunde ein anderes deiner Lieblingsfotos." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A different favorite photo every hour."
+    "Jede Stunde ein anderes deiner Lieblingsfotos.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A different favorite photo every hour."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Новое любимое фото каждый час."
           }
         }
       }
     },
-    "Öffne die Fotos-App, damit hier Bilder erscheinen." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open HomeRoll so pictures appear here."
+    "Öffne die Fotos-App, damit hier Bilder erscheinen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open HomeRoll so pictures appear here."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Откройте HomeRoll, чтобы здесь появились фотографии."
           }
         }
       }
     },
-    "Rückblicke" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Memories"
+    "Rückblicke": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memories"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспоминания"
           }
         }
       }
     }
   },
-  "version" : "1.1"
+  "version": "1.1"
 }

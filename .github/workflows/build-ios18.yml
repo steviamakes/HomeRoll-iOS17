@@ -1,4 +1,4 @@
-name: Build HomeRoll iOS 18 IPA
+name: Build HomeRoll iOS 17 UI IPA (RU)
 
 on:
   push:
@@ -47,11 +47,11 @@ jobs:
           codesign -f -s - --entitlements Share/FotosShare.entitlements "$P/PlugIns/FotosShare.appex"
           codesign -f -s - --entitlements App/HomeRoll.entitlements "$P"
 
-          zip -qr HomeRoll-iOS18.ipa Payload
+          zip -qr HomeRoll-iOS17.ipa Payload
 
-      - name: Upload HomeRoll-iOS18.ipa Artifact
+      - name: Upload HomeRoll-iOS17.ipa Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: HomeRoll-iOS18-IPA
-          path: HomeRoll-iOS18.ipa
+          name: HomeRoll-iOS17-IPA
+          path: HomeRoll-iOS17.ipa
           if-no-files-found: error

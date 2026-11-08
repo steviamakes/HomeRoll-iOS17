@@ -1,10 +1,25 @@
 {
   "sourceLanguage": "de",
   "strings": {
-    "": {},
+    "": {
+      "localizations": {
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ""
+          }
+        }
+      }
+    },
     " ": {
       "localizations": {
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " "
+          }
+        },
+        "ru": {
           "stringUnit": {
             "state": "translated",
             "value": " "
@@ -19,6 +34,12 @@
             "state": "translated",
             "value": "%1$lld items deleted from iPhone · %2$@ freed"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалено с iPhone: %1$lld · Освобождено: %2$@"
+          }
         }
       }
     },
@@ -28,6 +49,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Delete %1$lld items from iPhone (%2$@)?"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить %1$lld объектов с iPhone (%2$@)?"
           }
         }
       }
@@ -41,6 +68,12 @@
           }
         },
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@  %2$lld"
+          }
+        },
+        "ru": {
           "stringUnit": {
             "state": "translated",
             "value": "%1$@  %2$lld"
@@ -61,6 +94,12 @@
             "state": "translated",
             "value": "%1$@ (%2$@)"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ (%2$@)"
+          }
         }
       }
     },
@@ -70,6 +109,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ items on your server"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Объектов на вашем сервере: %@"
           }
         }
       }
@@ -81,6 +126,12 @@
             "state": "translated",
             "value": "Hide %@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скрыть (%@)"
+          }
         }
       }
     },
@@ -91,6 +142,12 @@
             "state": "translated",
             "value": "%@ Over the Years"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ за прошлые годы"
+          }
         }
       }
     },
@@ -100,6 +157,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Delete %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить (%@)"
           }
         }
       }
@@ -117,6 +180,12 @@
             "state": "translated",
             "value": "%1$@ of %2$@ backed up"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранено %1$@ из %2$@"
+          }
         }
       }
     },
@@ -133,6 +202,12 @@
             "state": "translated",
             "value": "%1$@ of %2$@ · %3$@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ из %2$@ · %3$@"
+          }
         }
       }
     },
@@ -142,6 +217,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Feature %@ Less"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показывать %@ реже"
           }
         }
       }
@@ -153,12 +234,24 @@
             "state": "translated",
             "value": "Loading %@ …"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загрузка %@…"
+          }
         }
       }
     },
     "%lld": {
       "localizations": {
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld"
+          }
+        },
+        "ru": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld"
@@ -173,6 +266,12 @@
             "state": "translated",
             "value": "%lld Albums"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Альбомов: %lld"
+          }
         }
       }
     },
@@ -182,6 +281,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld фото"
           }
         }
       }
@@ -193,6 +298,12 @@
             "state": "translated",
             "value": "%lld Photos Selected"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбрано фото: %lld"
+          }
         }
       }
     },
@@ -203,6 +314,12 @@
             "state": "translated",
             "value": "%lld photos confirmed"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подтверждено фото: %lld"
+          }
         }
       }
     },
@@ -212,6 +329,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Delete %lld Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить фото (%lld)"
           }
         }
       }
@@ -229,6 +352,12 @@
             "state": "translated",
             "value": "%1$lld photos from %2$@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld фото от %2$@"
+          }
         }
       }
     },
@@ -245,6 +374,12 @@
             "state": "translated",
             "value": "%1$lld photos added to %2$@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавлено %1$lld фото к «%2$@»"
+          }
         }
       }
     },
@@ -254,6 +389,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld groups"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Групп: %lld"
           }
         }
       }
@@ -265,6 +406,12 @@
             "state": "translated",
             "value": "%lld notifications scheduled"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запланировано уведомлений: %lld"
+          }
         }
       }
     },
@@ -274,6 +421,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld Items"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Объектов: %lld"
           }
         }
       }
@@ -285,6 +438,12 @@
             "state": "translated",
             "value": "%lld Items Selected"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбрано объектов: %lld"
+          }
         }
       }
     },
@@ -294,6 +453,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld items added"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавлено объектов: %lld"
           }
         }
       }
@@ -305,6 +470,12 @@
             "state": "translated",
             "value": "%lld items copied"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировано объектов: %lld"
+          }
         }
       }
     },
@@ -314,6 +485,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Delete %lld Items"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить объекты (%lld)"
           }
         }
       }
@@ -325,6 +502,12 @@
             "state": "translated",
             "value": "Backing up %lld items …"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Резервное копирование (%lld)…"
+          }
         }
       }
     },
@@ -334,6 +517,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld items added to “%@”"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В «%2$@» добавлено объектов: %1$lld"
           }
         }
       }
@@ -345,6 +534,12 @@
             "state": "translated",
             "value": "%lld days"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld дн."
+          }
         }
       }
     },
@@ -354,6 +549,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld Videos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld видео"
           }
         }
       }
@@ -365,6 +566,12 @@
             "state": "translated",
             "value": "%lld Videos Selected"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбрано видео: %lld"
+          }
         }
       }
     },
@@ -374,6 +581,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld videos checked …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверено видео: %lld…"
           }
         }
       }
@@ -385,6 +598,12 @@
             "state": "translated",
             "value": "Delete %lld Videos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить видео (%lld)"
+          }
         }
       }
     },
@@ -394,6 +613,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld removed from album"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалено из альбома: %lld"
           }
         }
       }
@@ -405,6 +630,12 @@
             "state": "translated",
             "value": "%lld hidden"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скрыто: %lld"
+          }
         }
       }
     },
@@ -414,6 +645,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld duplicated"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дублировано: %lld"
           }
         }
       }
@@ -425,6 +662,12 @@
             "state": "translated",
             "value": "%lld unhidden"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показано: %lld"
+          }
         }
       }
     },
@@ -434,6 +677,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld permanently deleted"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалено навсегда: %lld"
           }
         }
       }
@@ -445,6 +694,12 @@
             "state": "translated",
             "value": "%lld removed · undo at top left"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалено: %lld · Отменить слева вверху"
+          }
         }
       }
     },
@@ -454,6 +709,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld failed"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ошибок: %lld"
           }
         }
       }
@@ -465,6 +726,12 @@
             "state": "translated",
             "value": "%lld uploaded"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загружено: %lld"
+          }
         }
       }
     },
@@ -474,6 +741,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld already there"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Уже на сервере: %lld"
           }
         }
       }
@@ -491,6 +764,12 @@
             "state": "translated",
             "value": "%1$lld of %2$lld"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld из %2$lld"
+          }
         }
       }
     },
@@ -500,6 +779,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld recovered"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Восстановлено: %lld"
           }
         }
       }
@@ -511,6 +796,12 @@
             "state": "translated",
             "value": "1 Album"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 альбом"
+          }
         }
       }
     },
@@ -520,6 +811,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "1 Photo Selected"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбрано 1 фото"
           }
         }
       }
@@ -531,6 +828,12 @@
             "state": "translated",
             "value": "1 photo confirmed"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подтверждено 1 фото"
+          }
         }
       }
     },
@@ -540,6 +843,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Delete 1 Photo"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить 1 фото"
           }
         }
       }
@@ -551,6 +860,12 @@
             "state": "translated",
             "value": "1 photo added to %@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавлено 1 фото к «%@»"
+          }
         }
       }
     },
@@ -560,6 +875,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "1 Year"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 год"
           }
         }
       }
@@ -571,6 +892,12 @@
             "state": "translated",
             "value": "1 notification scheduled"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запланировано 1 уведомление"
+          }
         }
       }
     },
@@ -580,6 +907,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "1 Item"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 объект"
           }
         }
       }
@@ -591,6 +924,12 @@
             "state": "translated",
             "value": "1 Item Selected"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбран 1 объект"
+          }
         }
       }
     },
@@ -600,6 +939,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "1 item added"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавлен 1 объект"
           }
         }
       }
@@ -611,6 +956,12 @@
             "state": "translated",
             "value": "Delete 1 Item"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить 1 объект"
+          }
         }
       }
     },
@@ -620,6 +971,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "1 day"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 день"
           }
         }
       }
@@ -631,6 +988,12 @@
             "state": "translated",
             "value": "1 Video Selected"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбрано 1 видео"
+          }
         }
       }
     },
@@ -640,6 +1003,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Delete 1 Video"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить 1 видео"
           }
         }
       }
@@ -651,6 +1020,12 @@
             "state": "translated",
             "value": "10 GB"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 ГБ"
+          }
         }
       }
     },
@@ -660,6 +1035,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "2 GB"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 ГБ"
           }
         }
       }
@@ -671,6 +1052,12 @@
             "state": "translated",
             "value": "30 GB"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 ГБ"
+          }
         }
       }
     },
@@ -680,6 +1067,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "30 Days"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 дней"
           }
         }
       }
@@ -691,6 +1084,12 @@
             "state": "translated",
             "value": "7 Days"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7 дней"
+          }
         }
       }
     },
@@ -700,6 +1099,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "AUTO"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "АВТО"
           }
         }
       }
@@ -711,6 +1116,12 @@
             "state": "translated",
             "value": "Cancel"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отменить"
+          }
         }
       }
     },
@@ -720,6 +1131,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sign Out"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выйти"
           }
         }
       }
@@ -731,6 +1148,12 @@
             "state": "translated",
             "value": "Bounce"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Маятник"
+          }
         }
       }
     },
@@ -740,6 +1163,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Refresh"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обновить"
           }
         }
       }
@@ -751,6 +1180,12 @@
             "state": "translated",
             "value": "Albums"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Альбомы"
+          }
         }
       }
     },
@@ -760,6 +1195,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Touch and hold an album → “Move to Folder”."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удерживайте альбом → «Переместить в папку»."
           }
         }
       }
@@ -771,6 +1212,12 @@
             "state": "translated",
             "value": "Album"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Альбом"
+          }
         }
       }
     },
@@ -780,6 +1227,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "View Album"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать альбом"
           }
         }
       }
@@ -791,6 +1244,12 @@
             "state": "translated",
             "value": "Album deleted"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Альбом удален"
+          }
         }
       }
     },
@@ -800,6 +1259,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Album in Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Альбом в Фото"
           }
         }
       }
@@ -811,6 +1276,12 @@
             "state": "translated",
             "value": "Delete Album"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить альбом"
+          }
         }
       }
     },
@@ -820,6 +1291,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rename Album"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переименовать альбом"
           }
         }
       }
@@ -831,6 +1308,12 @@
             "state": "translated",
             "value": "Album “%@” created"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Альбом «%@» создан"
+          }
         }
       }
     },
@@ -840,6 +1323,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Album Name"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Название альбома"
           }
         }
       }
@@ -851,6 +1340,12 @@
             "state": "translated",
             "value": "All"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Все фото"
+          }
         }
       }
     },
@@ -860,6 +1355,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "All %lld items will be shifted by the same amount."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Время всех объектов (%lld) будет сдвинуто на одинаковый интервал."
           }
         }
       }
@@ -871,6 +1372,12 @@
             "state": "translated",
             "value": "Show All Photos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать все фото"
+          }
         }
       }
     },
@@ -880,6 +1387,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "All photos of these people will then appear under one name."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Все фотографии этих людей будут объединены под одним именем."
           }
         }
       }
@@ -891,6 +1404,12 @@
             "state": "translated",
             "value": "All Items"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Все объекты"
+          }
         }
       }
     },
@@ -900,6 +1419,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Unhide All"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Развернуть все"
           }
         }
       }
@@ -911,6 +1436,12 @@
             "state": "translated",
             "value": "Collapse All"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свернуть все"
+          }
         }
       }
     },
@@ -920,6 +1451,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "All edits to this photo will be removed."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Все изменения этого фото будут отменены."
           }
         }
       }
@@ -931,6 +1468,12 @@
             "state": "translated",
             "value": "Discard All Changes"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отменить все изменения"
+          }
         }
       }
     },
@@ -940,6 +1483,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Everything before %@ has already been imported from iCloud. When turned on, the app also checks older photos – but only those stored on the iPhone, without downloading them from iCloud."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Все до %@ уже перенесено. Если включено, приложение проверит и более старые фото, хранящиеся локально на iPhone (без скачивания из iCloud)."
           }
         }
       }
@@ -951,6 +1500,12 @@
             "state": "translated",
             "value": "Saved as duplicate"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранено как дубликат"
+          }
         }
       }
     },
@@ -960,6 +1515,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Save as Duplicate"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранить как дубликат"
           }
         }
       }
@@ -971,6 +1532,12 @@
             "state": "translated",
             "value": "Favorite"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В избранное"
+          }
         }
       }
     },
@@ -980,6 +1547,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Up Next"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Далее"
           }
         }
       }
@@ -991,6 +1564,12 @@
             "state": "translated",
             "value": "Play as Memory"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспроизвести как воспоминание"
+          }
         }
       }
     },
@@ -1000,6 +1579,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Make Key Photo"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сделать титульным фото"
           }
         }
       }
@@ -1011,6 +1596,12 @@
             "state": "translated",
             "value": "Make Key Photo for %@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сделать обложкой для «%@»"
+          }
         }
       }
     },
@@ -1020,6 +1611,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Share as Video"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поделиться как видео"
           }
         }
       }
@@ -1031,6 +1628,12 @@
             "state": "translated",
             "value": "Start"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Начало"
+          }
         }
       }
     },
@@ -1040,6 +1643,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pinned"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Закрепленные"
           }
         }
       }
@@ -1051,6 +1660,12 @@
             "state": "translated",
             "value": "Pause"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пауза"
+          }
         }
       }
     },
@@ -1060,6 +1675,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Animated"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Анимированные"
           }
         }
       }
@@ -1071,6 +1692,12 @@
             "state": "translated",
             "value": "Sign In"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Войти"
+          }
         }
       }
     },
@@ -1080,6 +1707,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Adjust"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настроить"
           }
         }
       }
@@ -1091,6 +1724,12 @@
             "state": "translated",
             "value": "Pin"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Закрепить"
+          }
         }
       }
     },
@@ -1100,6 +1739,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Show:"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показывать:"
           }
         }
       }
@@ -1111,6 +1756,12 @@
             "state": "translated",
             "value": "Everything stays on your server."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "На вашем сервере все файлы останутся в сохранности."
+          }
         }
       }
     },
@@ -1120,6 +1771,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Everything stays on the server. Previews will be downloaded again over Wi-Fi."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "На сервере все сохранится. Миниатюры будут загружены заново по Wi-Fi."
           }
         }
       }
@@ -1131,6 +1788,12 @@
             "state": "translated",
             "value": "Definition"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Четкость"
+          }
         }
       }
     },
@@ -1140,6 +1803,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Off"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выкл."
           }
         }
       }
@@ -1151,6 +1820,12 @@
             "state": "translated",
             "value": "Remove from Album"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить из альбома"
+          }
         }
       }
     },
@@ -1160,6 +1835,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Removed from album"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалено из альбома"
           }
         }
       }
@@ -1171,6 +1852,12 @@
             "state": "translated",
             "value": "Remove from Featured"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить из рекомендованных"
+          }
         }
       }
     },
@@ -1180,6 +1867,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remove from Favorites"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить из избранного"
           }
         }
       }
@@ -1191,6 +1884,12 @@
             "state": "translated",
             "value": "Remove from Memory"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить из воспоминания"
+          }
         }
       }
     },
@@ -1200,6 +1899,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Make Key Photo"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сделать титульным фото"
           }
         }
       }
@@ -1211,6 +1916,12 @@
             "state": "translated",
             "value": "Removed from memory"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалено из воспоминания"
+          }
         }
       }
     },
@@ -1220,6 +1931,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remove from “%@”"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить из «%@»"
           }
         }
       }
@@ -1231,6 +1948,12 @@
             "state": "translated",
             "value": "Removed from “%@”"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалено из «%@»"
+          }
         }
       }
     },
@@ -1240,6 +1963,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hide from “People”"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скрыть из раздела «Люди»"
           }
         }
       }
@@ -1251,6 +1980,12 @@
             "state": "translated",
             "value": "Hide"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скрыть"
+          }
         }
       }
     },
@@ -1260,6 +1995,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hidden"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скрытые"
           }
         }
       }
@@ -1271,6 +2012,12 @@
             "state": "translated",
             "value": "Show Hidden"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать скрытых"
+          }
         }
       }
     },
@@ -1280,6 +2027,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Select"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбрать"
           }
         }
       }
@@ -1291,6 +2044,12 @@
             "state": "translated",
             "value": "Auto"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Авто"
+          }
         }
       }
     },
@@ -1300,6 +2059,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "APERTURE  ƒ %.1f"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ДИАФРАГМА  ƒ %.1f"
           }
         }
       }
@@ -1311,6 +2076,12 @@
             "state": "translated",
             "value": "Backup"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Резервная копия"
+          }
         }
       }
     },
@@ -1320,6 +2091,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Backup & Offline"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бэкап и офлайн-режим"
           }
         }
       }
@@ -1331,6 +2108,12 @@
             "state": "translated",
             "value": "Backup is on"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Автозагрузка включена"
+          }
         }
       }
     },
@@ -1340,6 +2123,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Backup is off"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Автозагрузка выключена"
           }
         }
       }
@@ -1351,6 +2140,12 @@
             "state": "translated",
             "value": "Edit"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Править"
+          }
         }
       }
     },
@@ -1360,6 +2155,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Edited"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отредактированные"
           }
         }
       }
@@ -1371,6 +2172,12 @@
             "state": "translated",
             "value": "Edits pasted on %lld photos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Правки вставлены на %lld фото"
+          }
         }
       }
     },
@@ -1380,6 +2187,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Edits pasted"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Правки вставлены"
           }
         }
       }
@@ -1391,6 +2204,12 @@
             "state": "translated",
             "value": "Paste Edits"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вставить правки"
+          }
         }
       }
     },
@@ -1400,6 +2219,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasting edits… %lld of %lld"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вставка правок… %1$lld из %2$lld"
           }
         }
       }
@@ -1411,6 +2236,12 @@
             "state": "translated",
             "value": "Edits couldn't be pasted"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось вставить правки"
+          }
         }
       }
     },
@@ -1420,6 +2251,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Copy Edits"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировать правки"
           }
         }
       }
@@ -1431,6 +2268,12 @@
             "state": "translated",
             "value": "Edits copied"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Правки скопированы"
+          }
         }
       }
     },
@@ -1441,6 +2284,12 @@
             "state": "translated",
             "value": "Pasting edits…"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вставка правок…"
+          }
         }
       }
     },
@@ -1450,6 +2299,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stop"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Остановить"
           }
         }
       }
@@ -1462,6 +2317,12 @@
             "state": "translated",
             "value": "Straighten"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выпрямить"
+          }
         }
       }
     },
@@ -1472,6 +2333,12 @@
             "state": "translated",
             "value": "Receipts"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Чеки"
+          }
         }
       }
     },
@@ -1481,6 +2348,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Exposure"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Экспозиция"
           }
         }
       }
@@ -1493,6 +2366,12 @@
             "state": "translated",
             "value": "Clean Up"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ретушь"
+          }
         }
       }
     },
@@ -1502,6 +2381,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Clean Up at full resolution failed"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ошибка ретуши в полном разрешении"
           }
         }
       }
@@ -1513,6 +2398,12 @@
             "state": "translated",
             "value": "Clean Up unavailable – is the server running?"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сервис ретуши недоступен — проверьте сервер"
+          }
         }
       }
     },
@@ -1522,6 +2413,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mountains"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Горы"
           }
         }
       }
@@ -1533,6 +2430,12 @@
             "state": "translated",
             "value": "Mountains and nature"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Горы и природа"
+          }
         }
       }
     },
@@ -1542,6 +2445,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Amber"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Янтарь"
           }
         }
       }
@@ -1553,6 +2462,12 @@
             "state": "translated",
             "value": "Describe the memory you want to see – for example a place, a year, a person or a subject."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Опишите воспоминание, которое хотите увидеть — например, место, год, человека или событие."
+          }
         }
       }
     },
@@ -1562,6 +2477,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Describe a memory …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Опишите воспоминание…"
           }
         }
       }
@@ -1573,6 +2494,12 @@
             "state": "translated",
             "value": "Couldn’t render the image"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось обработать изображение"
+          }
         }
       }
     },
@@ -1582,6 +2509,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Couldn’t load the image"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось загрузить изображение"
           }
         }
       }
@@ -1593,6 +2526,12 @@
             "state": "translated",
             "value": "Screen Recording"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запись экрана"
+          }
         }
       }
     },
@@ -1602,6 +2541,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Screen Recordings"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Записи экрана"
           }
         }
       }
@@ -1613,6 +2558,12 @@
             "state": "translated",
             "value": "Screenshot"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Снимок экрана"
+          }
         }
       }
     },
@@ -1622,6 +2573,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Screenshots"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Снимки экрана"
           }
         }
       }
@@ -1633,6 +2590,12 @@
             "state": "translated",
             "value": "Brilliance"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Блеск"
+          }
         }
       }
     },
@@ -1642,6 +2605,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enter Passcode"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ввести код-пароль"
           }
         }
       }
@@ -1653,6 +2622,12 @@
             "state": "translated",
             "value": "Enter your passcode to view this album"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Введите код-пароль для просмотра этого альбома"
+          }
         }
       }
     },
@@ -1662,6 +2637,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "View Options"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Параметры вида"
           }
         }
       }
@@ -1673,6 +2654,12 @@
             "state": "translated",
             "value": "Best of %@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лучшее за %@"
+          }
         }
       }
     },
@@ -1682,6 +2669,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "The best photo stays, the others go to “Recently Deleted” (recoverable for 30 days)."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лучшее фото останется, а копии переместятся в «Недавно удаленные» (доступны 30 дней)."
           }
         }
       }
@@ -1693,6 +2686,12 @@
             "state": "translated",
             "value": "This Is Not %@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Это не %@"
+          }
         }
       }
     },
@@ -1702,6 +2701,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Date"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дата"
           }
         }
       }
@@ -1713,6 +2718,12 @@
             "state": "translated",
             "value": "Adjust Date & Time"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настроить дату и время"
+          }
         }
       }
     },
@@ -1722,6 +2733,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Date/Time"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дата и время"
           }
         }
       }
@@ -1733,6 +2750,12 @@
             "state": "translated",
             "value": "Duration"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Длительность"
+          }
         }
       }
     },
@@ -1742,6 +2765,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "I couldn’t find any matching photos."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подходящих фотографий не найдено."
           }
         }
       }
@@ -1753,6 +2782,12 @@
             "state": "translated",
             "value": "Your library on your own server"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ваша медиатека на собственном сервере"
+          }
         }
       }
     },
@@ -1762,6 +2797,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Slideshow"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Слайд-шоу"
           }
         }
       }
@@ -1773,6 +2814,12 @@
             "state": "translated",
             "value": "The app notes when it hangs or stutters while scrolling – without photos or names. Send the log if something is slow."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Журнал производительности фиксирует задержки интерфейса без личных данных."
+          }
         }
       }
     },
@@ -1782,6 +2829,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "The photos and videos stay in your library."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сами фото и видео останутся в вашей медиатеке."
           }
         }
       }
@@ -1793,6 +2846,12 @@
             "state": "translated",
             "value": "These %lld photos will be hidden, but you can still see them in the Hidden album."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эти фото (%lld) будут скрыты из медиатеки, но останутся доступны в альбоме «Скрытые»."
+          }
         }
       }
     },
@@ -1803,6 +2862,12 @@
             "state": "translated",
             "value": "These %lld items will be hidden, but you can still see them in the Hidden album."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эти объекты (%lld) будут скрыты из медиатеки, но останутся доступны в альбоме «Скрытые»."
+          }
         }
       }
     },
@@ -1812,6 +2877,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "These %lld items will be permanently deleted. This action can’t be undone."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эти объекты (%lld) будут удалены навсегда. Это действие нельзя отменить."
           }
         }
       }
@@ -1829,6 +2900,12 @@
             "state": "translated",
             "value": "Are these %1$lld people “%2$@”?"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Объединить этих людей (%1$lld) под именем «%2$@»?"
+          }
         }
       }
     },
@@ -1838,6 +2915,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "These %lld videos will be hidden, but you can still see them in the Hidden album."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эти видео (%lld) будут скрыты из медиатеки, но останутся доступны в альбоме «Скрытые»."
           }
         }
       }
@@ -1849,6 +2932,12 @@
             "state": "translated",
             "value": "These items go to “Recently Deleted” and can be recovered there for 30 days."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Объекты будут перемещены в «Недавно удаленные», где их можно восстановить в течение 30 дней."
+          }
         }
       }
     },
@@ -1858,6 +2947,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Is this person “%@”?"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Этот человек — «%@»?"
           }
         }
       }
@@ -1869,6 +2964,12 @@
             "state": "translated",
             "value": "These people see all your photos (except “Hidden” and “Recently Deleted”). Only users of your own server."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эти пользователи вашего сервера видят ваши фото (кроме «Скрытых» и «Недавно удаленных»)."
+          }
         }
       }
     },
@@ -1878,6 +2979,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "These days will be featured less"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эти дни будут показываться реже"
           }
         }
       }
@@ -1889,6 +2996,12 @@
             "state": "translated",
             "value": "Feature These Days Less"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показывать эти дни реже"
+          }
         }
       }
     },
@@ -1898,6 +3011,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "This album is empty."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В этом альбоме пока нет фото."
           }
         }
       }
@@ -1909,6 +3028,12 @@
             "state": "translated",
             "value": "This photo has no light or color edits"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "У этого фото нет настроек света или цвета"
+          }
         }
       }
     },
@@ -1918,6 +3043,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "This photo will be hidden, but you can still see it in the Hidden album."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Это фото будет скрыто из медиатеки, но останется в альбоме «Скрытые»."
           }
         }
       }
@@ -1929,6 +3060,12 @@
             "state": "translated",
             "value": "This item will be hidden, but you can still see it in the Hidden album."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Этот объект будет скрыт из медиатеки, но останется в альбоме «Скрытые»."
+          }
         }
       }
     },
@@ -1938,6 +3075,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "This item will be permanently deleted. This action can’t be undone."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Этот объект будет удален навсегда. Это действие нельзя отменить."
           }
         }
       }
@@ -1949,6 +3092,12 @@
             "state": "translated",
             "value": "This video will be hidden, but you can still see it in the Hidden album."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Это видео будет скрыто из медиатеки, но останется в альбоме «Скрытые»."
+          }
         }
       }
     },
@@ -1958,6 +3107,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Documents"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Документы"
           }
         }
       }
@@ -1969,6 +3124,12 @@
             "state": "translated",
             "value": "Dramatic"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Драма"
+          }
         }
       }
     },
@@ -1978,6 +3139,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dramatic Cool"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Холодная драма"
           }
         }
       }
@@ -1989,6 +3156,12 @@
             "state": "translated",
             "value": "Dramatic Warm"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Теплая драма"
+          }
         }
       }
     },
@@ -1998,6 +3171,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Print"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Напечатать"
           }
         }
       }
@@ -2009,6 +3188,12 @@
             "state": "translated",
             "value": "You Share With"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вы делитесь с"
+          }
         }
       }
     },
@@ -2018,6 +3203,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Duplicates"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дубликаты"
           }
         }
       }
@@ -2029,6 +3220,12 @@
             "state": "translated",
             "value": "Merge Duplicates?"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Объединить дубликаты?"
+          }
         }
       }
     },
@@ -2038,6 +3235,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Duplicate"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дублировать"
           }
         }
       }
@@ -2049,6 +3252,12 @@
             "state": "translated",
             "value": "Searches your library on your own server, e.g. for “beach 2019” or “receipts”."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поиск по вашей медиатеке на сервере, например «Пляж 2024» или «Чеки»."
+          }
         }
       }
     },
@@ -2058,6 +3267,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Email"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Логин или E-Mail"
           }
         }
       }
@@ -2069,6 +3284,12 @@
             "state": "translated",
             "value": "Effect"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эффект"
+          }
         }
       }
     },
@@ -2078,6 +3299,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Custom Mix"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свой микс"
           }
         }
       }
@@ -2089,6 +3316,12 @@
             "state": "translated",
             "value": "Unhide"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать"
+          }
         }
       }
     },
@@ -2098,6 +3331,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Unhidden"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показано"
           }
         }
       }
@@ -2109,6 +3348,12 @@
             "state": "translated",
             "value": "When on, this person’s photos appear in your library – hide them in the library menu under “Shared With You”."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Когда включено, фото этого партнера отображаются в вашей медиатеке."
+          }
         }
       }
     },
@@ -2118,6 +3363,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Featured Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Рекомендованные фото"
           }
         }
       }
@@ -2129,6 +3380,12 @@
             "state": "translated",
             "value": "End"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Конец"
+          }
         }
       }
     },
@@ -2138,6 +3395,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Permanently deleted"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалено навсегда"
           }
         }
       }
@@ -2149,6 +3412,12 @@
             "state": "translated",
             "value": "Loop"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Петля"
+          }
         }
       }
     },
@@ -2158,6 +3427,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Epic"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эпично"
           }
         }
       }
@@ -2169,6 +3444,12 @@
             "state": "translated",
             "value": "Memories"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспоминания"
+          }
         }
       }
     },
@@ -2178,6 +3459,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Create"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Создать"
           }
         }
       }
@@ -2189,6 +3476,12 @@
             "state": "translated",
             "value": "Food"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Еда"
+          }
         }
       }
     },
@@ -2198,6 +3491,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dinner with friends"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ужин с друзьями"
           }
         }
       }
@@ -2209,6 +3508,12 @@
             "state": "translated",
             "value": "Use Face ID or enter your passcode to view this album"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Используйте Face ID или введите код-пароль для просмотра альбома"
+          }
         }
       }
     },
@@ -2218,6 +3523,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Family"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Семья"
           }
         }
       }
@@ -2229,6 +3540,12 @@
             "state": "translated",
             "value": "Tint"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оттенок"
+          }
         }
       }
     },
@@ -2238,6 +3555,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Favorite"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избранное"
           }
         }
       }
@@ -2249,6 +3572,12 @@
             "state": "translated",
             "value": "Favorites"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избранное"
+          }
         }
       }
     },
@@ -2258,6 +3587,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Keep Favorites on iPhone"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оставлять избранные на iPhone"
           }
         }
       }
@@ -2269,6 +3604,12 @@
             "state": "translated",
             "value": "Done"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готово"
+          }
         }
       }
     },
@@ -2278,6 +3619,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Filters"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фильтры"
           }
         }
       }
@@ -2289,6 +3636,12 @@
             "state": "translated",
             "value": "Format"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Формат"
+          }
         }
       }
     },
@@ -2298,6 +3651,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Photo"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фото"
           }
         }
       }
@@ -2309,6 +3668,12 @@
             "state": "translated",
             "value": "Couldn't load the photo"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось загрузить фото"
+          }
         }
       }
     },
@@ -2318,6 +3683,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Photo, "
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фото, "
           }
         }
       }
@@ -2329,6 +3700,12 @@
             "state": "translated",
             "value": "Photos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фото"
+          }
         }
       }
     },
@@ -2338,6 +3715,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Photos (%@)"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фото (%@)"
           }
         }
       }
@@ -2349,6 +3732,12 @@
             "state": "translated",
             "value": "Add Photos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить фото"
+          }
         }
       }
     },
@@ -2358,6 +3747,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Back Up Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сделать копию фото"
           }
         }
       }
@@ -2369,6 +3764,12 @@
             "state": "translated",
             "value": "Search Photos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поиск фото"
+          }
         }
       }
     },
@@ -2378,6 +3779,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Share Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поделиться фото"
           }
         }
       }
@@ -2389,6 +3796,12 @@
             "state": "translated",
             "value": "Photos Older Than"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фото старше чем"
+          }
         }
       }
     },
@@ -2399,6 +3812,12 @@
             "state": "translated",
             "value": "Freeform"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Произвольно"
+          }
         }
       }
     },
@@ -2408,6 +3827,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Happy"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Весело"
           }
         }
       }
@@ -2420,6 +3845,12 @@
             "state": "translated",
             "value": "Spring"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Весна"
+          }
         }
       }
     },
@@ -2429,6 +3860,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nothing for “%@”."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Для фильтра «%@» ничего не найдено."
           }
         }
       }
@@ -2440,6 +3877,12 @@
             "state": "translated",
             "value": "Imported Up To"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортировано до"
+          }
         }
       }
     },
@@ -2449,6 +3892,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Older Photos Are Already on the Server"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Старые фото уже на сервере"
           }
         }
       }
@@ -2460,6 +3909,12 @@
             "state": "translated",
             "value": "The app backs up your entire library, including photos that are only in iCloud (they are downloaded for this). If you already moved older photos to the server another way, e.g. with icloudpd, turn this on: the app then only backs up what comes after."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приложение сохраняет всю медиатеку на ваш сервер. Если старые фото уже перенесены ранее, включите эту опцию, чтобы загружать только новые снимки."
+          }
         }
       }
     },
@@ -2469,6 +3924,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Check Entire Library"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверить всю медиатеку"
           }
         }
       }
@@ -2480,6 +3941,12 @@
             "state": "translated",
             "value": "Birthday"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "День рождения"
+          }
         }
       }
     },
@@ -2489,6 +3956,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Birthday saved – it will appear in Memories"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "День рождения сохранен"
           }
         }
       }
@@ -2500,6 +3973,12 @@
             "state": "translated",
             "value": "Add Birthday"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить день рождения"
+          }
         }
       }
     },
@@ -2509,6 +3988,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@’s Birthday"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "День рождения: %@"
           }
         }
       }
@@ -2520,6 +4005,12 @@
             "state": "translated",
             "value": "Change Birthday"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изменить день рождения"
+          }
         }
       }
     },
@@ -2529,6 +4020,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Muted B&W"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приглушенный Ч/Б"
           }
         }
       }
@@ -2540,6 +4037,12 @@
             "state": "translated",
             "value": "Filtered: %@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фильтр: %@"
+          }
         }
       }
     },
@@ -2549,6 +4052,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Like"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нравится"
           }
         }
       }
@@ -2560,6 +4069,12 @@
             "state": "translated",
             "value": "Unlike"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не нравится"
+          }
         }
       }
     },
@@ -2569,6 +4084,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trimmed video saved"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обрезанное видео сохранено"
           }
         }
       }
@@ -2580,6 +4101,12 @@
             "state": "translated",
             "value": "Drag the yellow handles to set start and end. The original is kept."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Потяните желтые ползунки для выбора начала и конца. Оригинал сохранится."
+          }
         }
       }
     },
@@ -2589,6 +4116,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cozy"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Уютно"
           }
         }
       }
@@ -2600,6 +4133,12 @@
             "state": "translated",
             "value": "Show protected albums"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Просмотр защищенных альбомов"
+          }
         }
       }
     },
@@ -2609,6 +4148,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Saved from %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранено из %@"
           }
         }
       }
@@ -2620,6 +4165,12 @@
             "state": "translated",
             "value": "Delete Stored Previews?"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить кэш миниатюр?"
+          }
         }
       }
     },
@@ -2629,6 +4180,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Yesterday"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вчера"
           }
         }
       }
@@ -2640,6 +4197,12 @@
             "state": "translated",
             "value": "Shared With You"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "С вами поделились"
+          }
         }
       }
     },
@@ -2649,6 +4212,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Shared Library"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Общая медиатека"
           }
         }
       }
@@ -2660,6 +4229,12 @@
             "state": "translated",
             "value": "Highlights"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Светлые участки"
+          }
         }
       }
     },
@@ -2669,6 +4244,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Choose the Same Person"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выберите того же человека"
           }
         }
       }
@@ -2680,6 +4261,12 @@
             "state": "translated",
             "value": "Gold"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Золото"
+          }
         }
       }
     },
@@ -2689,6 +4276,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Large"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крупно"
           }
         }
       }
@@ -2700,6 +4293,12 @@
             "state": "translated",
             "value": "Large Videos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Большие видео"
+          }
         }
       }
     },
@@ -2709,6 +4308,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Large previews"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Крупные превью"
           }
         }
       }
@@ -2720,6 +4325,12 @@
             "state": "translated",
             "value": "Large Previews Up To"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лимит крупных превью"
+          }
         }
       }
     },
@@ -2729,6 +4340,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Handwriting"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Рукописный текст"
           }
         }
       }
@@ -2740,6 +4357,12 @@
             "state": "translated",
             "value": "That didn't work"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось выполнить"
+          }
         }
       }
     },
@@ -2750,6 +4373,12 @@
             "state": "translated",
             "value": "Pets"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Питомцы"
+          }
         }
       }
     },
@@ -2759,6 +4388,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Brightness"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Яркость"
           }
         }
       }
@@ -2771,6 +4406,12 @@
             "state": "translated",
             "value": "Fall"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Осень"
+          }
         }
       }
     },
@@ -2780,6 +4421,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Today"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сегодня"
           }
         }
       }
@@ -2791,6 +4438,12 @@
             "state": "translated",
             "value": "%lld Years Ago Today"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld г. назад в этот день"
+          }
         }
       }
     },
@@ -2800,6 +4453,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "1 Year Ago Today"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 год назад в этот день"
           }
         }
       }
@@ -2811,12 +4470,24 @@
             "state": "translated",
             "value": "Albums appear here as soon as you create one or add photos."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Здесь появятся ваши альбомы, как только вы их создадите."
+          }
         }
       }
     },
     "HomeRoll": {
       "localizations": {
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HomeRoll"
+          }
+        },
+        "ru": {
           "stringUnit": {
             "state": "translated",
             "value": "HomeRoll"
@@ -2832,6 +4503,12 @@
             "state": "translated",
             "value": "Horizontal"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По горизонтали"
+          }
         }
       }
     },
@@ -2842,12 +4519,24 @@
             "state": "translated",
             "value": "Dog"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Собака"
+          }
         }
       }
     },
     "ISO %lld": {
       "localizations": {
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ISO %lld"
+          }
+        },
+        "ru": {
           "stringUnit": {
             "state": "translated",
             "value": "ISO %lld"
@@ -2862,6 +4551,12 @@
             "state": "translated",
             "value": "Illustrations"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Иллюстрации"
+          }
         }
       }
     },
@@ -2871,6 +4566,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Imports"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортированные"
           }
         }
       }
@@ -2882,6 +4583,12 @@
             "state": "translated",
             "value": "In %lld Albums"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В %lld альбомах"
+          }
         }
       }
     },
@@ -2891,6 +4598,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "In Album"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В альбоме"
           }
         }
       }
@@ -2902,6 +4615,12 @@
             "state": "translated",
             "value": "Show in Library"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать в медиатеке"
+          }
         }
       }
     },
@@ -2911,6 +4630,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Move to Folder"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переместить в папку"
           }
         }
       }
@@ -2922,6 +4647,12 @@
             "state": "translated",
             "value": "Not in Any Album"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не в альбоме"
+          }
         }
       }
     },
@@ -2931,6 +4662,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Show in “All Photos”"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать во «Всех фото»"
           }
         }
       }
@@ -2942,6 +4679,12 @@
             "state": "translated",
             "value": "Info"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сведения"
+          }
         }
       }
     },
@@ -2951,6 +4694,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Info, Look Up available"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сведения"
           }
         }
       }
@@ -2962,6 +4711,12 @@
             "state": "translated",
             "value": "Is this %@?"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Это %@?"
+          }
         }
       }
     },
@@ -2971,6 +4726,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Istanbul"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стамбул"
           }
         }
       }
@@ -2982,6 +4743,12 @@
             "state": "translated",
             "value": "Yes"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Да"
+          }
         }
       }
     },
@@ -2991,6 +4758,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Year"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Год"
           }
         }
       }
@@ -3003,6 +4776,12 @@
             "state": "translated",
             "value": "Years"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Годы"
+          }
         }
       }
     },
@@ -3012,6 +4791,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Back Up Now"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировать сейчас"
           }
         }
       }
@@ -3023,6 +4808,12 @@
             "state": "translated",
             "value": "Map"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Карта"
+          }
         }
       }
     },
@@ -3032,6 +4823,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Show Map"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать на карте"
           }
         }
       }
@@ -3043,6 +4840,12 @@
             "state": "translated",
             "value": "Unfavorite"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не избранное"
+          }
         }
       }
     },
@@ -3052,6 +4855,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No original found"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оригинал не найден"
           }
         }
       }
@@ -3063,6 +4872,12 @@
             "state": "translated",
             "value": "No Location"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без геопозиции"
+          }
         }
       }
     },
@@ -3072,6 +4887,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No access to Photos – allow it in Settings."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет доступа к Фото — разрешите доступ в Настройках iOS."
           }
         }
       }
@@ -3083,6 +4904,12 @@
             "state": "translated",
             "value": "No tilted horizon found"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Наклон горизонта не обнаружен"
+          }
         }
       }
     },
@@ -3092,6 +4919,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No Albums"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет альбомов"
           }
         }
       }
@@ -3103,6 +4936,12 @@
             "state": "translated",
             "value": "No Duplicates"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дубликатов нет"
+          }
         }
       }
     },
@@ -3112,6 +4951,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No Favorites"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет избранных"
           }
         }
       }
@@ -3123,6 +4968,12 @@
             "state": "translated",
             "value": "No photos with a location in this album"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В этом альбоме нет фото с геопозицией"
+          }
         }
       }
     },
@@ -3132,6 +4983,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No Photos or Videos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет фото или видео"
           }
         }
       }
@@ -3143,6 +5000,12 @@
             "state": "translated",
             "value": "No Items"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет объектов"
+          }
         }
       }
     },
@@ -3152,6 +5015,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No lens information"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет данных об объективе"
           }
         }
       }
@@ -3163,6 +5032,12 @@
             "state": "translated",
             "value": "No Memories"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспоминаний пока нет"
+          }
         }
       }
     },
@@ -3172,6 +5047,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No Collections"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет коллекций"
           }
         }
       }
@@ -3183,6 +5064,12 @@
             "state": "translated",
             "value": "No Results"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ничего не найдено"
+          }
         }
       }
     },
@@ -3192,6 +5079,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No Videos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет видео"
           }
         }
       }
@@ -3203,6 +5096,12 @@
             "state": "translated",
             "value": "No More Suggestions"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Больше предложений нет"
+          }
         }
       }
     },
@@ -3212,6 +5111,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cinematic"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Киноэффект"
           }
         }
       }
@@ -3223,6 +5128,12 @@
             "state": "translated",
             "value": "Small"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Мелко"
+          }
         }
       }
     },
@@ -3232,6 +5143,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Small previews"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Миниатюры"
           }
         }
       }
@@ -3243,6 +5160,12 @@
             "state": "translated",
             "value": "Add a Comment"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить комментарий"
+          }
         }
       }
     },
@@ -3252,6 +5175,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Delete Comment"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить комментарий"
           }
         }
       }
@@ -3263,6 +5192,12 @@
             "state": "translated",
             "value": "Comment not sent"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Комментарий не отправлен"
+          }
         }
       }
     },
@@ -3272,6 +5207,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Contrast"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Контрастность"
           }
         }
       }
@@ -3283,6 +5224,12 @@
             "state": "translated",
             "value": "High Contrast"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Высокий контраст"
+          }
         }
       }
     },
@@ -3292,6 +5239,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stark B&W"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Резкий Ч/Б"
           }
         }
       }
@@ -3303,6 +5256,12 @@
             "state": "translated",
             "value": "Copy"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировать"
+          }
         }
       }
     },
@@ -3312,6 +5271,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Copied"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировано"
           }
         }
       }
@@ -3323,6 +5288,12 @@
             "state": "translated",
             "value": "Short"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Коротко"
+          }
         }
       }
     },
@@ -3332,6 +5303,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cool"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Холодный"
           }
         }
       }
@@ -3343,6 +5320,12 @@
             "state": "translated",
             "value": "Cool Rose"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Холодная роза"
+          }
         }
       }
     },
@@ -3352,6 +5335,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Country"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Страна"
           }
         }
       }
@@ -3363,6 +5352,12 @@
             "state": "translated",
             "value": "Long"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Длинно"
+          }
         }
       }
     },
@@ -3372,6 +5367,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Long Exposure"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Длинная выдержка"
           }
         }
       }
@@ -3383,6 +5384,12 @@
             "state": "translated",
             "value": "Vivid"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Яркий"
+          }
         }
       }
     },
@@ -3392,6 +5399,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vivid Cool"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Яркий холодный"
           }
         }
       }
@@ -3403,6 +5416,12 @@
             "state": "translated",
             "value": "Vivid Warm"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Яркий теплый"
+          }
         }
       }
     },
@@ -3412,6 +5431,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vibrance"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Красочность"
           }
         }
       }
@@ -3423,6 +5448,12 @@
             "state": "translated",
             "value": "Performance"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Производительность"
+          }
         }
       }
     },
@@ -3432,6 +5463,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Performance Log"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Журнал работы"
           }
         }
       }
@@ -3443,6 +5480,12 @@
             "state": "translated",
             "value": "Share Performance Log"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поделиться журналом"
+          }
         }
       }
     },
@@ -3452,6 +5495,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recent Days"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недавние дни"
           }
         }
       }
@@ -3463,6 +5512,12 @@
             "state": "translated",
             "value": "Luminous"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свечение"
+          }
         }
       }
     },
@@ -3472,6 +5527,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Only in iCloud (not on the iPhone)"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Хранится только в iCloud (нет на iPhone)"
           }
         }
       }
@@ -3483,6 +5544,12 @@
             "state": "translated",
             "value": "Couldn’t create the link"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось создать ссылку"
+          }
         }
       }
     },
@@ -3492,6 +5559,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Link copied · valid for 30 days"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ссылка скопирована · действует 30 дней"
           }
         }
       }
@@ -3503,6 +5576,12 @@
             "state": "translated",
             "value": "Share Link (Home Network/VPN)"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поделиться ссылкой (локальная сеть)"
+          }
         }
       }
     },
@@ -3513,12 +5592,24 @@
             "state": "translated",
             "value": "Creating link …"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Создание ссылки…"
+          }
         }
       }
     },
     "Live": {
       "localizations": {
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live"
+          }
+        },
+        "ru": {
           "stringUnit": {
             "state": "translated",
             "value": "Live"
@@ -3533,6 +5624,12 @@
             "state": "translated",
             "value": "Live Photos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live Photos"
+          }
         }
       }
     },
@@ -3542,6 +5639,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Delete"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить"
           }
         }
       }
@@ -3553,6 +5656,12 @@
             "state": "translated",
             "value": "Deletes only photos and videos from the iPhone that are verified to be on your server. iOS asks first, and they stay in “Recently Deleted” in Apple’s Photos app for 30 days. Note: if iCloud Photos is on, iOS deletes them there too."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удаляет с этого iPhone только те фото и видео, которые уже гарантированно сохранены на вашем сервере. Перед удалением iOS спросит подтверждение, а файлы останутся еще на 30 дней в «Недавно удаленных»."
+          }
         }
       }
     },
@@ -3562,6 +5671,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tap the heart on a memory to see it here."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отметьте воспоминание сердечком, чтобы оно появилось здесь."
           }
         }
       }
@@ -3573,6 +5688,12 @@
             "state": "translated",
             "value": "Markup"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разметка"
+          }
         }
       }
     },
@@ -3582,6 +5703,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remove Markup"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить разметку"
           }
         }
       }
@@ -3593,6 +5720,12 @@
             "state": "translated",
             "value": "Library"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Медиатека"
+          }
         }
       }
     },
@@ -3602,6 +5735,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Search Library …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фото, люди, места…"
           }
         }
       }
@@ -3613,6 +5752,12 @@
             "state": "translated",
             "value": "Checking library …"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверка медиатеки…"
+          }
         }
       }
     },
@@ -3622,6 +5767,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Media Type"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тип медиафайлов"
           }
         }
       }
@@ -3633,6 +5784,12 @@
             "state": "translated",
             "value": "Media Types"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Типы медиафайлов"
+          }
         }
       }
     },
@@ -3642,6 +5799,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Merge with Person …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Объединить с человеком…"
           }
         }
       }
@@ -3653,6 +5816,12 @@
             "state": "translated",
             "value": "Shared With You"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "С вами поделились"
+          }
         }
       }
     },
@@ -3663,6 +5832,12 @@
             "state": "translated",
             "value": "“Years Ago Today” Notification"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Уведомления «В этот день»"
+          }
         }
       }
     },
@@ -3672,6 +5847,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Medium"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Средне"
           }
         }
       }
@@ -3684,6 +5865,12 @@
             "state": "translated",
             "value": "Months"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Месяцы"
+          }
         }
       }
     },
@@ -3693,6 +5880,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mosque"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Архитектура"
           }
         }
       }
@@ -3704,6 +5897,12 @@
             "state": "translated",
             "value": "Music"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Музыка"
+          }
         }
       }
     },
@@ -3713,6 +5912,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Music: %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Музыка: %@"
           }
         }
       }
@@ -3724,6 +5929,12 @@
             "state": "translated",
             "value": "Are you sure you want to delete the album “%@”?"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вы действительно хотите удалить альбом «%@»?"
+          }
         }
       }
     },
@@ -3733,6 +5944,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Are you sure you want to discard your changes?"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отменить внесенные изменения?"
           }
         }
       }
@@ -3744,6 +5961,12 @@
             "state": "translated",
             "value": "NEW KEY PHOTO"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "СДЕЛАТЬ ТИТУЛЬНЫМ ФОТО"
+          }
         }
       }
     },
@@ -3753,6 +5976,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sort by Date Captured"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сортировать по дате съемки"
           }
         }
       }
@@ -3764,6 +5993,12 @@
             "state": "translated",
             "value": "Sort by Recently Added"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сортировать по дате добавления"
+          }
         }
       }
     },
@@ -3773,6 +6008,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thoughtful"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Спокойно"
           }
         }
       }
@@ -3784,6 +6025,12 @@
             "state": "translated",
             "value": "Look Up"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Найти"
+          }
         }
       }
     },
@@ -3793,6 +6040,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Name"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Имя"
           }
         }
       }
@@ -3804,6 +6057,12 @@
             "state": "translated",
             "value": "Add Name"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить имя"
+          }
         }
       }
     },
@@ -3813,6 +6072,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Natural"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Естественный"
           }
         }
       }
@@ -3824,6 +6089,12 @@
             "state": "translated",
             "value": "No"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет"
+          }
         }
       }
     },
@@ -3833,6 +6104,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reorder"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изменить порядок"
           }
         }
       }
@@ -3844,6 +6121,12 @@
             "state": "translated",
             "value": "New photos and videos go to your own server – in the background while the iPhone charges at night, and whenever you open the app. Nothing is deleted from the iPhone unless you choose “Free Up Space” below."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Новые фото и видео автоматически загружаются на ваш сервер в фоне и при открытии приложения. С самого iPhone ничего не удаляется, пока вы сами не нажмете «Освободить место» ниже."
+          }
         }
       }
     },
@@ -3853,6 +6136,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "New Folder"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Новая папка"
           }
         }
       }
@@ -3864,6 +6153,12 @@
             "state": "translated",
             "value": "New Album"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Новый альбом"
+          }
         }
       }
     },
@@ -3873,6 +6168,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "New Album …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Новый альбом…"
           }
         }
       }
@@ -3884,6 +6185,12 @@
             "state": "translated",
             "value": "Newest First"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сначала новые"
+          }
         }
       }
     },
@@ -3893,6 +6200,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Neutral"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нейтральный"
           }
         }
       }
@@ -3904,6 +6217,12 @@
             "state": "translated",
             "value": "Not signed in"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вы не авторизованы"
+          }
         }
       }
     },
@@ -3913,6 +6232,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Not Backed Up (%lld)"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не сохранено (%lld)"
           }
         }
       }
@@ -3924,6 +6249,12 @@
             "state": "translated",
             "value": "Unpin"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открепить"
+          }
         }
       }
     },
@@ -3933,6 +6264,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nothing to delete – no matching photos that are already on the server."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нечего удалять — нет подходящих фото, которые уже скопированы на сервер."
           }
         }
       }
@@ -3944,6 +6281,12 @@
             "state": "translated",
             "value": "No Photos Yet"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фотографий пока нет"
+          }
         }
       }
     },
@@ -3953,6 +6296,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No People Yet"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Людей пока нет"
           }
         }
       }
@@ -3964,6 +6313,12 @@
             "state": "translated",
             "value": "Hasn’t run yet"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Еще не запускалось"
+          }
         }
       }
     },
@@ -3973,6 +6328,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nobody is sharing their photos with you yet."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пока никто не делится с вами медиатекой."
           }
         }
       }
@@ -3984,6 +6345,12 @@
             "state": "translated",
             "value": "Again"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Повторить"
+          }
         }
       }
     },
@@ -3993,6 +6360,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Only light, color, filter and style can be copied"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировать можно только свет, цвет, фильтр и стиль"
           }
         }
       }
@@ -4004,6 +6377,12 @@
             "state": "translated",
             "value": "Wi-Fi Only"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Только по Wi-Fi"
+          }
         }
       }
     },
@@ -4013,6 +6392,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Item"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Объект"
           }
         }
       }
@@ -4024,6 +6409,12 @@
             "state": "translated",
             "value": "Select Items"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выберите объекты"
+          }
         }
       }
     },
@@ -4033,6 +6424,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Offline – preview, original unavailable"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Офлайн — доступно только превью"
           }
         }
       }
@@ -4044,6 +6441,12 @@
             "state": "translated",
             "value": "Offline – previews only"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Офлайн — только миниатюры"
+          }
         }
       }
     },
@@ -4053,6 +6456,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Clear Offline Storage"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Очистить офлайн-кэш"
           }
         }
       }
@@ -4064,6 +6473,12 @@
             "state": "translated",
             "value": "Offline"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Офлайн-режим"
+          }
         }
       }
     },
@@ -4073,6 +6488,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "No Music"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без музыки"
           }
         }
       }
@@ -4084,6 +6505,12 @@
             "state": "translated",
             "value": "Without a connection to the server you see all photos as previews; videos and originals need the server. Downloads only happen over Wi-Fi, and the iPhone always keeps at least 10 GB free."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без связи с сервером доступны миниатюры всех фото; для просмотра видео и оригиналов нужен сервер."
+          }
         }
       }
     },
@@ -4093,6 +6520,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Use Optic ID or enter your passcode to view this album"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Используйте Optic ID или код-пароль для просмотра альбома"
           }
         }
       }
@@ -4104,6 +6537,12 @@
             "state": "translated",
             "value": "Folder deleted – the albums are kept"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Папка удалена — сами альбомы сохранены"
+          }
         }
       }
     },
@@ -4113,6 +6552,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Folder Is Empty"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Папка пуста"
           }
         }
       }
@@ -4124,6 +6569,12 @@
             "state": "translated",
             "value": "Delete Folder"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить папку"
+          }
         }
       }
     },
@@ -4133,6 +6584,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rename Folder"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переименовать папку"
           }
         }
       }
@@ -4144,6 +6601,12 @@
             "state": "translated",
             "value": "Original"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оригинал"
+          }
         }
       }
     },
@@ -4153,6 +6616,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Revert to Original"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вернуть к оригиналу"
           }
         }
       }
@@ -4164,6 +6633,12 @@
             "state": "translated",
             "value": "Revert to Original?"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вернуть к оригиналу?"
+          }
         }
       }
     },
@@ -4173,6 +6648,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Loading original …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загрузка оригинала…"
           }
         }
       }
@@ -4184,6 +6665,12 @@
             "state": "translated",
             "value": "Original Key Photo"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Исходное титульное фото"
+          }
         }
       }
     },
@@ -4193,6 +6680,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Location"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Геопозиция"
           }
         }
       }
@@ -4204,6 +6697,12 @@
             "state": "translated",
             "value": "Adjust Location"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изменить геопозицию"
+          }
         }
       }
     },
@@ -4213,6 +6712,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Add Location"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить геопозицию"
           }
         }
       }
@@ -4224,6 +6729,12 @@
             "state": "translated",
             "value": "Search Location"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поиск места"
+          }
         }
       }
     },
@@ -4233,6 +6744,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Places"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Места"
           }
         }
       }
@@ -4244,6 +6761,12 @@
             "state": "translated",
             "value": "PALETTE  %lld"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ПАЛИТРА  %lld"
+          }
         }
       }
     },
@@ -4253,6 +6776,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "BRUSH SIZE"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "РАЗМЕР КИСТИ"
           }
         }
       }
@@ -4264,6 +6793,12 @@
             "state": "translated",
             "value": "PORTRAIT"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ПОРТРЕТ"
+          }
         }
       }
     },
@@ -4273,6 +6808,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "PORTRAIT OFF"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ПОРТРЕТ ВЫКЛ."
           }
         }
       }
@@ -4284,6 +6825,12 @@
             "state": "translated",
             "value": "Panoramas"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Панорамы"
+          }
         }
       }
     },
@@ -4293,6 +6840,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Password"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пароль"
           }
         }
       }
@@ -4304,6 +6857,12 @@
             "state": "translated",
             "value": "Pause"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пауза"
+          }
         }
       }
     },
@@ -4313,6 +6872,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Person"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Человек"
           }
         }
       }
@@ -4324,6 +6889,12 @@
             "state": "translated",
             "value": "Add Person …"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить человека…"
+          }
         }
       }
     },
@@ -4333,6 +6904,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Person in Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Человек в Фото"
           }
         }
       }
@@ -4344,6 +6921,12 @@
             "state": "translated",
             "value": "People"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Люди"
+          }
         }
       }
     },
@@ -4353,6 +6936,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "People appear here once the server has recognized faces in your photos."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Люди появятся здесь, когда сервер распознает лица на фотографиях."
           }
         }
       }
@@ -4364,6 +6953,12 @@
             "state": "translated",
             "value": "Plant, animal, landmark or artwork in the photo"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Растение, животное или достопримечательность на фото"
+          }
         }
       }
     },
@@ -4373,6 +6968,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Portrait"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Портрет"
           }
         }
       }
@@ -4384,6 +6985,12 @@
             "state": "translated",
             "value": "Portrait Aperture"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Диафрагма портрета"
+          }
         }
       }
     },
@@ -4393,6 +7000,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Try a different term or remove a filter chip."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Попробуйте другой запрос или уберите фильтр."
           }
         }
       }
@@ -4404,6 +7017,12 @@
             "state": "translated",
             "value": "Clear Log"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Очистить журнал"
+          }
         }
       }
     },
@@ -4413,6 +7032,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "QR Codes"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QR-коды"
           }
         }
       }
@@ -4424,6 +7049,12 @@
             "state": "translated",
             "value": "Square"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Квадрат"
+          }
         }
       }
     },
@@ -4433,6 +7064,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Noise Reduction"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шумоподавление"
           }
         }
       }
@@ -4444,6 +7081,12 @@
             "state": "translated",
             "value": "Trip"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поездка"
+          }
         }
       }
     },
@@ -4453,6 +7096,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trips"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поездки"
           }
         }
       }
@@ -4464,6 +7113,12 @@
             "state": "translated",
             "value": "Rose Gold"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Розовое золото"
+          }
         }
       }
     },
@@ -4473,6 +7128,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quiet"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Спокойный"
           }
         }
       }
@@ -4484,6 +7145,12 @@
             "state": "translated",
             "value": "Spatial Scene"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пространственная сцена"
+          }
         }
       }
     },
@@ -4493,6 +7160,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Spatial scene not available"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пространственная сцена недоступна"
           }
         }
       }
@@ -4504,6 +7177,12 @@
             "state": "translated",
             "value": "Memory"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспоминание"
+          }
         }
       }
     },
@@ -4513,6 +7192,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Memory removed – too few photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспоминание удалено — слишком мало фото"
           }
         }
       }
@@ -4524,6 +7209,12 @@
             "state": "translated",
             "value": "Create Memory"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Создать воспоминание"
+          }
         }
       }
     },
@@ -4533,6 +7224,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Memory deleted"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспоминание удалено"
           }
         }
       }
@@ -4544,6 +7241,12 @@
             "state": "translated",
             "value": "Delete Memory"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить воспоминание"
+          }
         }
       }
     },
@@ -4553,6 +7256,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Creating memory …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Создание воспоминания…"
           }
         }
       }
@@ -4564,6 +7273,12 @@
             "state": "translated",
             "value": "Memory Mix"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Микс воспоминания"
+          }
         }
       }
     },
@@ -4573,6 +7288,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Memories"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспоминания"
           }
         }
       }
@@ -4584,6 +7305,12 @@
             "state": "translated",
             "value": "Memories appear here as more photos and videos are added to your library."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспоминания появятся здесь по мере добавления фотографий и видео в медиатеку."
+          }
         }
       }
     },
@@ -4593,6 +7320,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Memories appear here as more photos are added to your library."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспоминания появятся здесь по мере добавления фотографий в медиатеку."
           }
         }
       }
@@ -4604,6 +7337,12 @@
             "state": "translated",
             "value": "KEY PHOTO: ORIGINAL"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ТИТУЛЬНОЕ ФОТО: ОРИГИНАЛ"
+          }
         }
       }
     },
@@ -4613,6 +7352,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Collections"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Коллекции"
           }
         }
       }
@@ -4624,6 +7369,12 @@
             "state": "translated",
             "value": "Collections (%lld)"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Коллекции (%lld)"
+          }
         }
       }
     },
@@ -4633,6 +7384,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gentle"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Мягкий"
           }
         }
       }
@@ -4644,6 +7401,12 @@
             "state": "translated",
             "value": "Shadows"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тени"
+          }
         }
       }
     },
@@ -4653,6 +7416,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Close"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Закрыть"
           }
         }
       }
@@ -4664,6 +7433,12 @@
             "state": "translated",
             "value": "Key photo set"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Титульное фото выбрано"
+          }
         }
       }
     },
@@ -4673,6 +7448,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Black Point"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Точка черного"
           }
         }
       }
@@ -4684,6 +7465,12 @@
             "state": "translated",
             "value": "Black & White"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Черно-белый"
+          }
         }
       }
     },
@@ -4693,6 +7480,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sharpness"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Резкость"
           }
         }
       }
@@ -4704,6 +7497,12 @@
             "state": "translated",
             "value": "Aspect Ratio Grid"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сетка с пропорциями"
+          }
         }
       }
     },
@@ -4713,6 +7512,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Selfies"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Селфи"
           }
         }
       }
@@ -4724,6 +7529,12 @@
             "state": "translated",
             "value": "Send"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отправить"
+          }
         }
       }
     },
@@ -4733,6 +7544,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bursts"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Серии"
           }
         }
       }
@@ -4744,6 +7561,12 @@
             "state": "translated",
             "value": "Server unreachable"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сервер недоступен"
+          }
         }
       }
     },
@@ -4753,6 +7576,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Server, e.g. https://photos.example.com"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Адрес сервера, напр. http://192.168.1.3:2283"
           }
         }
       }
@@ -4770,6 +7599,12 @@
             "state": "translated",
             "value": "Server error %1$lld: %2$@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ошибка сервера %1$lld: %2$@"
+          }
         }
       }
     },
@@ -4779,6 +7614,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Save"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранить"
           }
         }
       }
@@ -4790,6 +7631,12 @@
             "state": "translated",
             "value": "Saving failed"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ошибка сохранения"
+          }
         }
       }
     },
@@ -4799,6 +7646,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Silvertone"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Серебряный"
           }
         }
       }
@@ -4810,6 +7663,12 @@
             "state": "translated",
             "value": "Slo-mo"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Замедленно"
+          }
         }
       }
     },
@@ -4819,6 +7678,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "New suggestions appear here once the server has recognized more faces."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Новые предложения появятся после распознавания лиц сервером."
           }
         }
       }
@@ -4831,6 +7696,12 @@
             "state": "translated",
             "value": "Summer"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лето"
+          }
         }
       }
     },
@@ -4840,6 +7711,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sunset"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Закат"
           }
         }
       }
@@ -4851,6 +7728,12 @@
             "state": "translated",
             "value": "Sunsets"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Закаты"
+          }
         }
       }
     },
@@ -4860,6 +7743,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Utilities"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Другое"
           }
         }
       }
@@ -4871,6 +7760,12 @@
             "state": "translated",
             "value": "Sort"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сортировка"
+          }
         }
       }
     },
@@ -4880,6 +7775,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sort and Zoom"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сортировка и масштаб"
           }
         }
       }
@@ -4891,6 +7792,12 @@
             "state": "translated",
             "value": "Sort Order"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сортировка"
+          }
         }
       }
     },
@@ -4900,6 +7807,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Free Up Space …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Освободить место на iPhone…"
           }
         }
       }
@@ -4911,6 +7824,12 @@
             "state": "translated",
             "value": "Standard"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По умолчанию"
+          }
         }
       }
     },
@@ -4921,6 +7840,12 @@
             "state": "translated",
             "value": "Tone and color pad"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Панель тона и цвета"
+          }
         }
       }
     },
@@ -4930,6 +7855,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Style"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стиль"
           }
         }
       }
@@ -4942,6 +7873,12 @@
             "state": "translated",
             "value": "Styles"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стили"
+          }
         }
       }
     },
@@ -4951,6 +7888,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Beach"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пляж"
           }
         }
       }
@@ -4962,6 +7905,12 @@
             "state": "translated",
             "value": "Search Term"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поисковый запрос"
+          }
         }
       }
     },
@@ -4971,6 +7920,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Search"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поиск"
           }
         }
       }
@@ -4982,6 +7937,12 @@
             "state": "translated",
             "value": "Saturation"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Насыщенность"
+          }
         }
       }
     },
@@ -4991,6 +7952,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Share"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поделиться"
           }
         }
       }
@@ -5002,6 +7969,12 @@
             "state": "translated",
             "value": "Stop Sharing"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Прекратить доступ"
+          }
         }
       }
     },
@@ -5011,6 +7984,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Stop sharing with %@?"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Прекратить делиться с %@?"
           }
         }
       }
@@ -5022,6 +8001,12 @@
             "state": "translated",
             "value": "Shares With You"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Делятся с вами"
+          }
         }
       }
     },
@@ -5031,6 +8016,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Text in Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Текст на фото"
           }
         }
       }
@@ -5042,6 +8033,12 @@
             "state": "translated",
             "value": "Tap “Portrait” to turn on depth blur"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите «Портрет», чтобы включить размытие фона"
+          }
         }
       }
     },
@@ -5051,6 +8048,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Title"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Название"
           }
         }
       }
@@ -5062,6 +8065,12 @@
             "state": "translated",
             "value": "Edit Title"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изменить название"
+          }
         }
       }
     },
@@ -5071,6 +8080,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Key photo set"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обложка выбрана"
           }
         }
       }
@@ -5088,6 +8103,12 @@
             "state": "translated",
             "value": "Tone %1$+d · Color %2$+d"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тон %1$+d · Цвет %2$+d"
+          }
         }
       }
     },
@@ -5104,6 +8125,12 @@
             "state": "translated",
             "value": "Tone %1$lld, color %2$lld"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тон %1$lld, цвет %2$lld"
+          }
         }
       }
     },
@@ -5113,6 +8140,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sound On"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Звук вкл."
           }
         }
       }
@@ -5124,6 +8157,12 @@
             "state": "translated",
             "value": "Sound Off"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Звук выкл."
+          }
         }
       }
     },
@@ -5133,6 +8172,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sound is on"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Звук включен"
           }
         }
       }
@@ -5144,6 +8189,12 @@
             "state": "translated",
             "value": "Sound is off"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Звук выключен"
+          }
         }
       }
     },
@@ -5153,6 +8204,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Use Touch ID or enter your passcode to view this album"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Используйте Touch ID или введите код-пароль для просмотра альбома"
           }
         }
       }
@@ -5164,6 +8221,12 @@
             "state": "translated",
             "value": "Rename"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переименовать"
+          }
         }
       }
     },
@@ -5173,6 +8236,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Unknown camera"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неизвестная камера"
           }
         }
       }
@@ -5184,6 +8253,12 @@
             "state": "translated",
             "value": "Unnamed"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без имени"
+          }
         }
       }
     },
@@ -5193,6 +8268,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Invalid server address"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неверный адрес сервера"
           }
         }
       }
@@ -5204,6 +8285,12 @@
             "state": "translated",
             "value": "Add a Caption"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить подпись"
+          }
         }
       }
     },
@@ -5213,6 +8300,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vacation 2025"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отпуск 2025"
           }
         }
       }
@@ -5224,6 +8317,12 @@
             "state": "translated",
             "value": "Zoom In"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Увеличить масштаб"
+          }
         }
       }
     },
@@ -5234,6 +8333,12 @@
             "state": "translated",
             "value": "Zoom Out"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Уменьшить масштаб"
+          }
         }
       }
     },
@@ -5243,6 +8348,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Clear History"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Очистить историю"
           }
         }
       }
@@ -5255,6 +8366,12 @@
             "state": "translated",
             "value": "Vertical"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По вертикали"
+          }
         }
       }
     },
@@ -5264,6 +8381,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Video"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видео"
           }
         }
       }
@@ -5275,6 +8398,12 @@
             "state": "translated",
             "value": "Video needs a connection to the server"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Для воспроизведения видео нужна связь с сервером"
+          }
         }
       }
     },
@@ -5284,6 +8413,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Couldn’t create the video"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось создать видео"
           }
         }
       }
@@ -5295,6 +8430,12 @@
             "state": "translated",
             "value": "Creating video …"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Создание видео…"
+          }
         }
       }
     },
@@ -5304,6 +8445,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Creating video … %lld %%"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Создание видео… %lld %%"
           }
         }
       }
@@ -5315,6 +8462,12 @@
             "state": "translated",
             "value": "Trimming video …"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обрезка видео…"
+          }
         }
       }
     },
@@ -5324,6 +8477,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Video, "
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видео, "
           }
         }
       }
@@ -5335,6 +8494,12 @@
             "state": "translated",
             "value": "Videos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видео"
+          }
         }
       }
     },
@@ -5344,6 +8509,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Autoplay Videos & Live Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Автовоспроизведение видео и Live Photos"
           }
         }
       }
@@ -5355,6 +8526,12 @@
             "state": "translated",
             "value": "Videos can’t be duplicated"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видео нельзя дублировать"
+          }
         }
       }
     },
@@ -5364,6 +8541,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Videos can't be printed"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видео нельзя распечатать"
           }
         }
       }
@@ -5375,6 +8558,12 @@
             "state": "translated",
             "value": "Checking videos …"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверка видео…"
+          }
         }
       }
     },
@@ -5384,6 +8573,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vignette"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Виньетка"
           }
         }
       }
@@ -5395,6 +8590,12 @@
             "state": "translated",
             "value": "Delete from iPhone"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить с iPhone"
+          }
         }
       }
     },
@@ -5404,6 +8605,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Store Previews on iPhone"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Хранить превью на iPhone"
           }
         }
       }
@@ -5415,6 +8622,12 @@
             "state": "translated",
             "value": "Suggestions"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Предложения"
+          }
         }
       }
     },
@@ -5424,6 +8637,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Warm"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Теплый"
           }
         }
       }
@@ -5435,6 +8654,12 @@
             "state": "translated",
             "value": "More Photos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Другие фото"
+          }
         }
       }
     },
@@ -5444,6 +8669,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Review More Photos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверить еще фото"
           }
         }
       }
@@ -5455,6 +8686,12 @@
             "state": "translated",
             "value": "The white handles on top set the slow-motion part, the yellow ones below set start and end. The original is kept."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Белые ползунки сверху задают замедление, желтые снизу — начало и конец."
+          }
         }
       }
     },
@@ -5464,6 +8701,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Featuring %@ less"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показывать %@ реже"
           }
         }
       }
@@ -5475,6 +8718,12 @@
             "state": "translated",
             "value": "Featuring %@ less"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показывать %@ реже"
+          }
         }
       }
     },
@@ -5484,6 +8733,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Feature Less"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показывать реже"
           }
         }
       }
@@ -5495,6 +8750,12 @@
             "state": "translated",
             "value": "Undo"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отменить"
+          }
         }
       }
     },
@@ -5504,6 +8765,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "What’s this person’s name?"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Как зовут этого человека?"
           }
         }
       }
@@ -5515,6 +8782,12 @@
             "state": "translated",
             "value": "Show Again"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать снова"
+          }
         }
       }
     },
@@ -5524,6 +8797,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Playback"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Воспроизведение"
           }
         }
       }
@@ -5535,6 +8814,12 @@
             "state": "translated",
             "value": "Recovered"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Восстановлено"
+          }
         }
       }
     },
@@ -5545,6 +8830,12 @@
             "state": "translated",
             "value": "Recover"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Восстановить"
+          }
         }
       }
     },
@@ -5554,6 +8845,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Repeat"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Повторить"
           }
         }
       }
@@ -5566,6 +8863,12 @@
             "state": "translated",
             "value": "Winter"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Зима"
+          }
         }
       }
     },
@@ -5575,6 +8878,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cleaning up …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ретушь…"
           }
         }
       }
@@ -5592,6 +8901,12 @@
             "state": "translated",
             "value": "Duplicating … %1$lld of %2$lld"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дублирование… %1$lld из %2$lld"
+          }
         }
       }
     },
@@ -5601,6 +8916,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Saving …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранение…"
           }
         }
       }
@@ -5612,6 +8933,12 @@
             "state": "translated",
             "value": "Copying …"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Копирование…"
+          }
         }
       }
     },
@@ -5622,6 +8949,12 @@
             "state": "translated",
             "value": "Won't be featured anymore"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Больше не будет рекомендоваться"
+          }
         }
       }
     },
@@ -5631,6 +8964,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preparing…"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подготовка…"
           }
         }
       }
@@ -5648,6 +8987,12 @@
             "state": "translated",
             "value": "Preparing… %lld of %lld"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подготовка… %1$lld из %2$lld"
+          }
         }
       }
     },
@@ -5657,6 +9002,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Shown again"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Снова отображается"
           }
         }
       }
@@ -5668,6 +9019,12 @@
             "state": "translated",
             "value": "What should I search for?"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Что нужно найти?"
+          }
         }
       }
     },
@@ -5677,6 +9034,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Warmth"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Теплота"
           }
         }
       }
@@ -5688,6 +9051,12 @@
             "state": "translated",
             "value": "Slow Motion"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Замедленно"
+          }
         }
       }
     },
@@ -5697,6 +9066,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Slow-motion handle"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ползунок замедления"
           }
         }
       }
@@ -5708,6 +9083,12 @@
             "state": "translated",
             "value": "Slow-motion video saved"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Замедленное видео сохранено"
+          }
         }
       }
     },
@@ -5717,6 +9098,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Time-lapse"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Таймлапс"
           }
         }
       }
@@ -5728,6 +9115,12 @@
             "state": "translated",
             "value": "Add to Favorites"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В избранное"
+          }
         }
       }
     },
@@ -5737,6 +9130,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Too few photos for a memory"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Слишком мало фото для воспоминания"
           }
         }
       }
@@ -5748,6 +9147,12 @@
             "state": "translated",
             "value": "Added to “%@”"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавлено в «%@»"
+          }
         }
       }
     },
@@ -5757,6 +9162,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recent"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недавние"
           }
         }
       }
@@ -5768,6 +9179,12 @@
             "state": "translated",
             "value": "Last run %@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Последняя копия: %@"
+          }
         }
       }
     },
@@ -5777,6 +9194,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recently Viewed"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недавно просмотренные"
           }
         }
       }
@@ -5788,6 +9211,12 @@
             "state": "translated",
             "value": "Recently Edited"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недавно измененные"
+          }
         }
       }
     },
@@ -5797,6 +9226,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recently Deleted"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недавно удаленные"
           }
         }
       }
@@ -5808,6 +9243,12 @@
             "state": "translated",
             "value": "Recently Saved"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недавно сохраненные"
+          }
         }
       }
     },
@@ -5817,6 +9258,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recently Shared"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недавно отправленные"
           }
         }
       }
@@ -5828,6 +9275,12 @@
             "state": "translated",
             "value": "Recently Modified"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По дате изменения"
+          }
         }
       }
     },
@@ -5837,6 +9290,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Add to Album"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить в альбом"
           }
         }
       }
@@ -5848,6 +9307,12 @@
             "state": "translated",
             "value": "Added to album"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавлено в альбом"
+          }
         }
       }
     },
@@ -5857,6 +9322,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Drag to tilt"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Потяните для наклона"
           }
         }
       }
@@ -5868,6 +9339,12 @@
             "state": "translated",
             "value": "Swipe sideways to change"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Смахните в сторону для изменения"
+          }
         }
       }
     },
@@ -5877,6 +9354,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reset"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сбросить"
           }
         }
       }
@@ -5888,6 +9371,12 @@
             "state": "translated",
             "value": "Total %@"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Всего %@"
+          }
         }
       }
     },
@@ -5898,6 +9387,12 @@
             "state": "translated",
             "value": "Merge"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Объединить"
+          }
         }
       }
     },
@@ -5907,6 +9402,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Merged"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Объединено"
           }
         }
       }
@@ -5919,6 +9420,12 @@
             "state": "translated",
             "value": "Crop"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обрезать"
+          }
         }
       }
     },
@@ -5928,6 +9435,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reset Crop"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сбросить обрезку"
           }
         }
       }
@@ -5939,6 +9452,12 @@
             "state": "translated",
             "value": "this person"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "этот человек"
+          }
         }
       }
     },
@@ -5948,6 +9467,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tilt your iPhone"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Наклоните iPhone"
           }
         }
       }
@@ -5959,6 +9484,12 @@
             "state": "translated",
             "value": "iPhone Storage"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Память iPhone"
+          }
         }
       }
     },
@@ -5968,6 +9499,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "iPhone storage almost full – paused"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Память iPhone почти заполнена — пауза"
           }
         }
       }
@@ -5979,6 +9516,12 @@
             "state": "translated",
             "value": "in %lld s · Cancel"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "через %lld с · Отмена"
+          }
         }
       }
     },
@@ -5988,6 +9531,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Looking for similar faces …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поиск похожих лиц…"
           }
         }
       }
@@ -5999,6 +9548,12 @@
             "state": "translated",
             "value": "Oldest First"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сначала старые"
+          }
         }
       }
     },
@@ -6008,6 +9563,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Paste Edits"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вставить правки"
           }
         }
       }
@@ -6019,6 +9580,12 @@
             "state": "translated",
             "value": "Copy Edits"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Скопировать правки"
+          }
         }
       }
     },
@@ -6028,6 +9595,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Discard Changes"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отменить изменения"
           }
         }
       }
@@ -6039,6 +9612,12 @@
             "state": "translated",
             "value": "Ethereal"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эфирный"
+          }
         }
       }
     },
@@ -6048,6 +9627,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Brush over an object to remove it"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Закрасьте объект, чтобы удалить его"
           }
         }
       }
@@ -6059,6 +9644,12 @@
             "state": "translated",
             "value": "“%@”"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@»"
+          }
         }
       }
     },
@@ -6068,6 +9659,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "That's an email address. The first field needs your Immich server's address, e.g. http://192.168.1.20:2283"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Это E-Mail. В первое поле нужно ввести адрес вашего сервера, например http://192.168.1.3:2283"
           }
         }
       }
@@ -6079,6 +9676,12 @@
             "state": "translated",
             "value": "No Immich server answered at this address. Are the address and port (usually 2283) right?"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По этому адресу сервер не отвечает. Проверьте IP-адрес и порт (обычно 2283)."
+          }
         }
       }
     },
@@ -6088,6 +9691,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Try Again"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Повторить попытку"
           }
         }
       }
@@ -6099,6 +9708,12 @@
             "state": "translated",
             "value": "Sign Out / Change Server"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выйти / другой сервер"
+          }
         }
       }
     },
@@ -6108,6 +9723,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "This video can't be played on iPhone"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone не может воспроизвести это видео"
           }
         }
       }
@@ -6119,6 +9740,12 @@
             "state": "translated",
             "value": "iOS doesn't support this file format (e.g. HEVC tagged “hev1”, VP9 or AV1). To fix it in Immich, go to Administration → Settings → Video Transcoding and turn on real-time transcoding, or have these videos transcoded to H.264."
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Формат файла не поддерживается iOS."
+          }
         }
       }
     },
@@ -6128,6 +9755,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Load More"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загрузить еще"
           }
         }
       }
@@ -6139,6 +9772,12 @@
             "state": "translated",
             "value": "Red"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Красный"
+          }
         }
       }
     },
@@ -6148,6 +9787,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Orange"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оранжевый"
           }
         }
       }
@@ -6159,6 +9804,12 @@
             "state": "translated",
             "value": "Yellow"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Желтый"
+          }
         }
       }
     },
@@ -6168,6 +9819,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Green"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Зеленый"
           }
         }
       }
@@ -6179,6 +9836,12 @@
             "state": "translated",
             "value": "Cyan"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Голубой"
+          }
         }
       }
     },
@@ -6188,6 +9851,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Blue"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синий"
           }
         }
       }
@@ -6199,6 +9868,12 @@
             "state": "translated",
             "value": "Purple"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фиолетовый"
+          }
         }
       }
     },
@@ -6208,6 +9883,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Magenta"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пурпурный"
           }
         }
       }
@@ -6219,6 +9900,12 @@
             "state": "translated",
             "value": "%@ Photos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ фото"
+          }
         }
       }
     },
@@ -6228,6 +9915,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ Videos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ видео"
           }
         }
       }
@@ -6245,6 +9938,12 @@
             "state": "translated",
             "value": "%1$@ Fotos, %2$@ Videos"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ фото, %2$@ видео"
+          }
         }
       }
     },
@@ -6254,6 +9953,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Backup Paused for %@ Items"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Копирование приостановлено (%@)"
           }
         }
       }
@@ -6265,6 +9970,12 @@
             "state": "translated",
             "value": "Backup Paused"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Копирование приостановлено"
+          }
         }
       }
     },
@@ -6274,6 +9985,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Resume"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Продолжить"
           }
         }
       }
@@ -6285,6 +10002,12 @@
             "state": "translated",
             "value": "Pause"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пауза"
+          }
         }
       }
     },
@@ -6294,6 +10017,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Looking for New Photos …"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поиск новых фото…"
           }
         }
       }
@@ -6305,6 +10034,12 @@
             "state": "translated",
             "value": "Backing Up %@ Items"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Копирование объектов (%@)…"
+          }
         }
       }
     },
@@ -6314,6 +10049,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Backup Stopped: %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Копирование прервано: %@"
           }
         }
       }
@@ -6325,6 +10066,12 @@
             "state": "translated",
             "value": "%@ Items Not Backed Up Yet"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Еще не скопировано: %@"
+          }
         }
       }
     },
@@ -6334,6 +10081,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Backed Up to Your Server · %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранено на сервере · %@"
           }
         }
       }
@@ -6345,6 +10098,12 @@
             "state": "translated",
             "value": "Paused until %@ tomorrow"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пауза до %@ завтра"
+          }
         }
       }
     },
@@ -6355,6 +10114,12 @@
             "state": "translated",
             "value": "Pause for One Day"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приостановить на день"
+          }
         }
       }
     },
@@ -6364,6 +10129,28 @@
           "stringUnit": {
             "state": "translated",
             "value": "Backing Up %@ Items in the Background"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Копирование в фоне (%@)"
+          }
+        }
+      }
+    },
+    "Für dich": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For You"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Для вас"
           }
         }
       }

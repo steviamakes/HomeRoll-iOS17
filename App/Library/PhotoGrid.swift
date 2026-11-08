@@ -407,7 +407,7 @@ struct PhotoGrid: UIViewRepresentable {
         controller.view = v
         if old.autoplay != autoplay { c.updateAutoplay() }
         if let footer, let h = c.footerHost { h.rootView = footer }
-        let bottom = 96 + (v.window?.safeAreaInsets.bottom ?? 34) + (c.footerHost != nil ? footerHeight + 6 : 0)
+        let bottom = 112 + (v.window?.safeAreaInsets.bottom ?? 34) + (c.footerHost != nil ? footerHeight + 6 : 0)
         if v.contentInset.top != topInset || v.contentInset.bottom != bottom {
             v.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: bottom, right: 0)
             v.verticalScrollIndicatorInsets = v.contentInset

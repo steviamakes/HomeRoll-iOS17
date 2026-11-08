@@ -13,16 +13,20 @@ struct RootView: View {
             Group {
                 switch app.tab {
                 case .library: LibraryView()
-                case .collections: CollectionsView()
+                case .forYou: CollectionsView(mode: .forYou)
+                case .albums: CollectionsView(mode: .albums)
+                case .search: SearchView(isTab: true)
                 }
             }
             .environment(\.zoomNamespace, zoom)
             if app.tab == .library { BottomBlur() }
-            Group {
-                if app.selecting { SelectionBar() } else { BottomBar() }
+            if app.selecting {
+                SelectionBar()
+                    .padding(.horizontal, 22)
+                    .padding(.bottom, 8)
+            } else {
+                BottomBar()
             }
-            .padding(.horizontal, 22)
-            .padding(.bottom, 4)
         }
         .overlay(alignment: .top) { VStack { BusyBadge(); ToastBadge() } }
         .actionSheets($app.sheet)
@@ -78,7 +82,7 @@ struct RootView: View {
             app.viewer = nil; app.showSearch = false
             if url.host == "album" || url.host == "person" {
                 let name = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.first { $0.name == "name" }?.value ?? ""
-                app.tab = .collections
+                app.tab = .albums
                 Task {
                     var title = name
                     if url.host == "album", title.isEmpty { title = (try? await ImmichClient.shared.albums())?.first { $0.id == id }?.albumName ?? "" }
@@ -105,9 +109,10 @@ extension RootView {
     /// Für das Leistungsprotokoll: wo man gerade ist.
     private var perfScreen: String {
         if app.viewer != nil { return "Einzelansicht" }
-        if app.showSearch { return "Suche" }
+        if app.showSearch || app.tab == .search { return "Suche" }
         if app.memory != nil { return "Rückblick" }
-        if app.tab == .collections { return "Sammlungen" }
+        if app.tab == .forYou { return "Für dich" }
+        if app.tab == .albums { return "Alben" }
         return app.scale == .all ? "Mediathek \(app.columns) Spalten" : "Mediathek \(app.scale.rawValue)"
     }
 }
@@ -185,47 +190,70 @@ final class SpringLoadWindow: NSObject, UIDropInteractionDelegate {
     }
 }
 
-/// Schwebende Glasleiste unten – in der Mediathek mit Jahre/Monate/Alle, sonst Tabs.
+/// Классическая нижняя панель Фото как в iOS 17:
+/// постоянный 4-вкладочный таббар («Медиатека», «Для вас», «Альбомы», «Поиск»),
+/// а на вкладке «Медиатека» над ним парит компактный переключатель «Годы | Месяцы | Все фото».
 struct BottomBar: View {
     @Environment(AppModel.self) private var app
-    @Namespace private var ns
-    /// Federnde Tabs wie bei Apple (UITabBar springLoaded): gezogenes Foto kurz über dem Tab halten → Tab wechselt,
-    /// so landet ein Foto aus der Mediathek mit einem Finger auf einem Album in den Sammlungen.
     @State private var hovering: Tab?
 
     var body: some View {
-        GlassEffectContainer(spacing: 14) {
-            HStack(spacing: 12) {
-                if app.tab == .library && !app.tabsExpanded {
-                    Button { withAnimation(.snappy) { app.tabsExpanded = true } } label: {
-                        Image(systemName: "photo.on.rectangle.angled")
-                            .font(.system(size: 22, weight: .medium))
-                            .symbolRenderingMode(.multicolor)
-                            .foregroundStyle(.blue)
-                            .frame(width: 58, height: 58)
-                    }
-                    .glassEffect(.regular.interactive(), in: .circle)
-                    .glassEffectID("tab", in: ns)
-                    .springLoaded(to: .collections, hovering: $hovering)
+        VStack(spacing: 10) {
+            if app.tab == .library {
+                ScaleSwitcher()
+                    .glassEffect(.regular.interactive(), in: .capsule)
+                    .padding(.horizontal, 36)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
 
-                    ScaleSwitcher()
-                        .glassEffect(.regular.interactive(), in: .capsule)
-                } else {
-                    TabSwitcher()
-                        .glassEffect(.regular.interactive(), in: .capsule)
-                        .glassEffectID("tab", in: ns)
-                        .springLoaded(to: app.tab == .library ? .collections : .library, hovering: $hovering)
-                    Spacer(minLength: 0)
-                }
-                Button { app.showSearch = true } label: {
-                    Image(systemName: "magnifyingglass")
-                        .font(.system(size: 22, weight: .medium))
-                        .foregroundStyle(.white)
-                        .frame(width: 58, height: 58)
-                }
-                .glassEffect(.regular.interactive(), in: .circle)
+            HStack(spacing: 0) {
+                tabButton(.library, icon: "photo.fill.on.rectangle.fill", title: String(localized: "Mediathek"))
+                    .springLoaded(to: .library, hovering: $hovering)
+                tabButton(.forYou, icon: "heart.text.square.fill", title: String(localized: "Für dich"))
+                    .springLoaded(to: .forYou, hovering: $hovering)
+                tabButton(.albums, icon: "rectangle.stack.fill", title: String(localized: "Alben"))
+                    .springLoaded(to: .albums, hovering: $hovering)
+                tabButton(.search, icon: "magnifyingglass", title: String(localized: "Suchen"))
+                    .springLoaded(to: .search, hovering: $hovering)
+            }
+            .padding(.top, 7)
+            .padding(.bottom, 2)
+            .background {
+                Rectangle()
+                    .fill(.ultraThinMaterial)
+                    .overlay(alignment: .top) {
+                        Rectangle().fill(Color.white.opacity(0.14)).frame(height: 0.5)
+                    }
+                    .ignoresSafeArea(edges: .bottom)
             }
         }
+    }
+
+    private func tabButton(_ t: Tab, icon: String, title: String) -> some View {
+        let on = app.tab == t
+        return Button {
+            if t == .library && app.tab == .library {
+                NotificationCenter.default.post(name: .scrollToNewest, object: nil)
+            }
+            withAnimation(.snappy(duration: 0.2)) {
+                app.tab = t
+                app.tabsExpanded = false
+            }
+        } label: {
+            VStack(spacing: 4) {
+                Image(systemName: icon)
+                    .font(.system(size: 21, weight: .medium))
+                    .frame(height: 24)
+                Text(title)
+                    .font(.system(size: 10, weight: .medium))
+                    .lineLimit(1)
+            }
+            .foregroundStyle(on ? Color.blue : Color.secondary)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 2)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
     }
 }
 
@@ -236,19 +264,18 @@ private struct ScaleSwitcher: View {
         HStack(spacing: 0) {
             ForEach(LibraryScale.allCases) { s in
                 Button {
-                    // wie Apple: „Alle“ erneut antippen springt zum Neuesten ganz unten
                     if s == .all && app.scale == .all { NotificationCenter.default.post(name: .scrollToNewest, object: nil) }
                     withAnimation(.snappy(duration: 0.25)) { app.scale = s }
                 } label: {
                     Text(L(s.rawValue))
-                        .font(.system(size: 17, weight: app.scale == s ? .semibold : .regular))
-                        .foregroundStyle(.white)
-                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .font(.system(size: 14, weight: app.scale == s ? .semibold : .medium))
+                        .foregroundStyle(app.scale == s ? .white : .white.opacity(0.75))
+                        .frame(maxWidth: .infinity, minHeight: 36)
                         .background {
                             if app.scale == s {
-                                Capsule().fill(.white.opacity(0.16))
+                                Capsule().fill(.white.opacity(0.22))
                                     .matchedGeometryEffect(id: "sel", in: sel)
-                                    .padding(4)
+                                    .padding(3)
                             }
                         }
                         .contentShape(Rectangle())
@@ -256,37 +283,8 @@ private struct ScaleSwitcher: View {
                 .buttonStyle(.plain)
             }
         }
-        .padding(.horizontal, 4)
-        .frame(height: 58)
-    }
-}
-
-private struct TabSwitcher: View {
-    @Environment(AppModel.self) private var app
-    @Namespace private var sel
-    var body: some View {
-        HStack(spacing: 0) {
-            item(.library, "photo.on.rectangle.angled", String(localized: "Mediathek"))
-            item(.collections, "square.stack.fill", String(localized: "Sammlungen"))
-        }
-        .padding(4)
-    }
-
-    private func item(_ t: Tab, _ icon: String, _ title: String) -> some View {
-        let on = app.tab == t
-        return Button { withAnimation(.snappy) { app.tab = t; app.tabsExpanded = false } } label: {
-            VStack(spacing: 3) {
-                Image(systemName: icon).font(.system(size: 21, weight: .medium))
-                Text(title).font(.system(size: 11, weight: .medium))
-            }
-            .foregroundStyle(on ? Color.blue : .white)
-            .frame(width: 100, height: 54)
-            .background {
-                if on { Capsule().fill(.white.opacity(0.14)).matchedGeometryEffect(id: "tabsel", in: sel) }
-            }
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
+        .padding(.horizontal, 3)
+        .frame(height: 42)
     }
 }
 

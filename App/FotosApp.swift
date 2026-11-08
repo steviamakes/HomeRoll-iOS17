@@ -32,13 +32,13 @@ struct FotosApp: App {
             }
             .onReceive(NotificationCenter.default.publisher(for: .openSearch)) { n in
                 app.pendingQuery = n.object as? String
-                app.viewer = nil; app.showSearch = true
+                app.viewer = nil; app.tab = .search
             }
         }
     }
 }
 
-enum Tab: Hashable { case library, collections }
+enum Tab: Hashable { case library, forYou, albums, search }
 enum LibraryScale: String, CaseIterable, Identifiable {
     case years = "Jahre", months = "Monate", all = "Alle"
     var id: String { rawValue }

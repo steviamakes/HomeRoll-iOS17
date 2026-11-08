@@ -296,7 +296,7 @@ struct AllGrid: View {
                         .glassEffect(.regular.interactive(), in: .capsule)
                     }
                     .buttonStyle(.plain)
-                    .padding(.bottom, 118)
+                    .padding(.bottom, 128)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }

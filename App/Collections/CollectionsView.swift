@@ -73,7 +73,12 @@ final class CollectionsModel {
     }
 }
 
+enum CollectionsMode: Hashable {
+    case all, forYou, albums
+}
+
 struct CollectionsView: View {
+    var mode: CollectionsMode = .all
     @Environment(AppModel.self) private var app
     @Environment(TimelineStore.self) private var timeline
     @State private var model = CollectionsModel()
@@ -98,7 +103,17 @@ struct CollectionsView: View {
 
     private var order: [Sec] {
         let saved = orderRaw.split(separator: ",").compactMap { Sec(rawValue: String($0)) }
-        return saved + Sec.allCases.filter { !saved.contains($0) }
+        let full = saved + Sec.allCases.filter { !saved.contains($0) }
+        switch mode {
+        case .forYou:
+            let allowed: [Sec] = [.memories, .featured, .recentDays, .trips]
+            return full.filter { allowed.contains($0) }
+        case .albums:
+            let allowed: [Sec] = [.pinned, .albums, .people, .mediaTypes, .others]
+            return full.filter { allowed.contains($0) }
+        case .all:
+            return full
+        }
     }
 
     var body: some View {
@@ -163,11 +178,26 @@ struct CollectionsView: View {
 
     // MARK: Kopf
 
+    private var headerTitle: String {
+        switch mode {
+        case .forYou: String(localized: "Für dich")
+        case .albums: String(localized: "Alben")
+        case .all: String(localized: "Sammlungen")
+        }
+    }
+
     private var header: some View {
         HStack(alignment: .top) {
-            Text(String(localized: "Sammlungen")).font(.system(size: 34, weight: .bold))
+            Text(headerTitle).font(.system(size: 34, weight: .bold))
             Spacer()
             HStack(spacing: 12) {
+                if mode == .albums {
+                    Button { albumName = ""; newAlbum = true } label: {
+                        Image(systemName: "plus").font(.system(size: 20, weight: .semibold))
+                            .foregroundStyle(.white).frame(width: 46, height: 46).contentShape(.rect)
+                    }
+                    .glassEffect(.regular.interactive(), in: .circle)
+                }
                 Menu {
                     Section {
                         ControlGroup {
