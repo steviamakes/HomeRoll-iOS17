@@ -714,7 +714,7 @@ struct MemoriesScreen: View {
             }
             .padding(20).padding(.bottom, 90)
         }
-        .background(Color.black)
+        .background(Color(.systemBackground))
         .navigationTitle(String(localized: "Rückblicke"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -873,7 +873,7 @@ struct MemoryGrid: View {
                     }
                 }
             }
-            .background(Color.black)
+            .background(Color(.systemBackground))
             .navigationTitle(String(localized: "\(assets.count) Fotos"))
             .navigationBarTitleDisplayMode(.inline)
         }

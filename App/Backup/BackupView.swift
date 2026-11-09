@@ -4,6 +4,7 @@ import SwiftUI
 struct BackupView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var engine = BackupEngine.shared
+    @AppStorage("app_theme") private var appTheme: String = "system"
 
     var body: some View {
         @Bindable var engine = engine
@@ -55,6 +56,14 @@ struct BackupView: View {
                     } else {
                         Text(String(localized: "Die App sichert die ganze Mediathek, auch Fotos, die nur in iCloud liegen (sie werden dafür geladen). Hast du ältere Fotos schon anders auf den Server gebracht, z. B. mit icloudpd, schalte das ein: Dann sichert die App nur, was danach dazukommt."))
                     }
+                }
+                Section(String(localized: "Erscheinungsbild")) {
+                    Picker(String(localized: "Thema"), selection: $appTheme) {
+                        Text(String(localized: "Automatisch")).tag("system")
+                        Text(String(localized: "Dunkel")).tag("dark")
+                        Text(String(localized: "Hell")).tag("light")
+                    }
+                    .pickerStyle(.segmented)
                 }
                 FreeUpSection()
                 OfflineSection()

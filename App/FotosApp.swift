@@ -6,6 +6,15 @@ struct FotosApp: App {
     @UIApplicationDelegateAdaptor(HomeRollAppDelegate.self) private var delegate
     @State private var app = AppModel()
     @State private var timeline = TimelineStore()
+    @AppStorage("app_theme") private var appTheme: String = "system"
+
+    private var preferredScheme: ColorScheme? {
+        switch appTheme {
+        case "light": return .light
+        case "dark": return .dark
+        default: return nil
+        }
+    }
 
     init() {
         BackupEngine.registerBackgroundTask()
@@ -20,7 +29,7 @@ struct FotosApp: App {
             }
             .environment(app)
             .environment(timeline)
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(preferredScheme)
             .onReceive(NotificationCenter.default.publisher(for: .sessionExpired)) { _ in
                 app.loggedIn = false
             }

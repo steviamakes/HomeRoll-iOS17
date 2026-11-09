@@ -9,7 +9,7 @@ struct RootView: View {
     var body: some View {
         @Bindable var app = app
         ZStack(alignment: .bottom) {
-            Color.black.ignoresSafeArea()
+            Color(.systemBackground).ignoresSafeArea()
             Group {
                 switch app.tab {
                 case .library: LibraryView()
@@ -226,7 +226,7 @@ struct BottomBar: View {
                 Rectangle()
                     .fill(.ultraThinMaterial)
                     .overlay(alignment: .top) {
-                        Rectangle().fill(Color.white.opacity(0.14)).frame(height: 0.5)
+                        Rectangle().fill(Color.primary.opacity(0.12)).frame(height: 0.5)
                     }
                     .ignoresSafeArea(edges: .bottom)
             }
@@ -273,11 +273,11 @@ private struct ScaleSwitcher: View {
                 } label: {
                     Text(L(s.rawValue))
                         .font(.system(size: 14, weight: app.scale == s ? .semibold : .medium))
-                        .foregroundStyle(app.scale == s ? .white : .white.opacity(0.75))
+                        .foregroundStyle(app.scale == s ? Color.primary : Color.secondary)
                         .frame(maxWidth: .infinity, minHeight: 36)
                         .background {
                             if app.scale == s {
-                                Capsule().fill(.white.opacity(0.22))
+                                Capsule().fill(Color.primary.opacity(0.15))
                                     .matchedGeometryEffect(id: "sel", in: sel)
                                     .padding(3)
                             }

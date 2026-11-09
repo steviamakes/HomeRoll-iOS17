@@ -197,7 +197,7 @@ struct CategoryListScreen: View {
         }
         .navigationTitle(title)
         .scrollContentBackground(.hidden)
-        .background(Color.black)
+        .background(Color(.systemBackground))
     }
 }
 
@@ -222,7 +222,7 @@ struct LockGate<Content: View>: View {
             }
             .padding(.horizontal, 44)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.black)
+            .background(Color(.systemBackground))
             .overlay(alignment: .top) { ScreenHeader(title: title) }
             .toolbar(.hidden, for: .navigationBar)
             .task { await unlock(allowCode: false) }
@@ -296,7 +296,7 @@ struct LargeVideosScreen: View {
             else if list.isEmpty { ContentUnavailableView(String(localized: "Keine Videos"), systemImage: "video") }
         }
         .navigationTitle(String(localized: "Große Videos"))
-        .background(Color.black)
+        .background(Color(.systemBackground))
         .task {
             // Immich sortiert nicht nach Größe → alle Videos mit Dateigröße holen (in Seiten), hier sortieren
             let all = (try? await ImmichClient.shared.search(filter: ["type": ["eq": "VIDEO"]], size: 50_000)) ?? []
@@ -354,7 +354,7 @@ struct DuplicatesScreen: View {
             .padding(.top, 130).padding(.bottom, 110)
         }
         .ignoresSafeArea(edges: .top)
-        .background(Color.black)
+        .background(Color(.systemBackground))
         .overlay(alignment: .top) { ScreenHeader(title: String(localized: "Duplikate"), subtitle: groups.map { String(localized: "\($0.count) Gruppen") } ?? "") }
         .overlay { if groups?.isEmpty == true { ContentUnavailableView(String(localized: "Keine Duplikate"), systemImage: "square.on.square") } }
         .toolbar(.hidden, for: .navigationBar)

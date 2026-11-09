@@ -214,7 +214,7 @@ struct PinnedScreen: View {
             .padding(20)
         }
         .environment(\.cardSide, (UIScreen.main.bounds.width - 56) / 2)
-        .background(Color.black)
+        .background(Color(.systemBackground))
         .navigationTitle(String(localized: "Angepinnt"))
     }
 }

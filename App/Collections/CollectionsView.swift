@@ -92,6 +92,7 @@ struct CollectionsView: View {
     @AppStorage("albumSort") private var albumSortRaw = AlbumSort.modified.rawValue
     @State private var editPinned = false
     @State private var reorder = false
+    @AppStorage("app_theme") private var appTheme: String = "system"
     @State private var newAlbum = false
     @State private var showBackup = false
     @State private var showShared = false
@@ -126,7 +127,7 @@ struct CollectionsView: View {
                 .padding(.bottom, 120)
             }
             .scrollIndicators(.hidden)
-            .background(Color.black)
+            .background(Color(.systemBackground))
             .overlay(alignment: .top) {
                 header.padding(.bottom, 26).background(alignment: .top) { TopBlur() }
             }
@@ -188,7 +189,7 @@ struct CollectionsView: View {
 
     private var header: some View {
         HStack(alignment: .top) {
-            Text(headerTitle).font(.system(size: 34, weight: .bold))
+            Text(headerTitle).font(.system(size: 34, weight: .bold)).foregroundStyle(Color.primary)
             Spacer()
             HStack(spacing: 12) {
                 if mode == .albums {
@@ -225,6 +226,17 @@ struct CollectionsView: View {
                 Menu {
                     Section(model.userName) {
                         Button(String(localized: "Backup"), systemImage: "arrow.triangle.2.circlepath.icloud") { showBackup = true }
+                        Menu(String(localized: "Thema"), systemImage: "circle.lefthalf.filled") {
+                            Button { appTheme = "system" } label: {
+                                Label(String(localized: "Automatisch"), systemImage: appTheme == "system" ? "checkmark" : "")
+                            }
+                            Button { appTheme = "dark" } label: {
+                                Label(String(localized: "Dunkel"), systemImage: appTheme == "dark" ? "checkmark" : "")
+                            }
+                            Button { appTheme = "light" } label: {
+                                Label(String(localized: "Hell"), systemImage: appTheme == "light" ? "checkmark" : "")
+                            }
+                        }
                         Button(String(localized: "Geteilte Mediathek"), systemImage: "person.2") { showShared = true }
                         Button(String(localized: "Aktualisieren"), systemImage: "arrow.clockwise") {
                             Task { await model.load(); await timeline.reload(); await timeline.loadAll() }
@@ -256,7 +268,7 @@ struct CollectionsView: View {
                     if let route { path.append(route) }
                 } label: {
                     HStack(spacing: 6) {
-                        Text(title).font(.system(size: 26, weight: .bold))
+                        Text(title).font(.system(size: 26, weight: .bold)).foregroundStyle(Color.primary)
                         if route != nil { Image(systemName: "chevron.right").font(.system(size: 20, weight: .bold)).foregroundStyle(.secondary) }
                     }
                     .foregroundStyle(.white)
@@ -267,7 +279,7 @@ struct CollectionsView: View {
                     Button { editPinned = true } label: {
                         Text(String(localized: "Bearbeiten")).font(.system(size: 16, weight: .semibold)).foregroundStyle(.blue)
                             .padding(.horizontal, 14).frame(height: 34)
-                            .background(Capsule().fill(Color(white: 0.15)))
+                            .background(Capsule().fill(Color(.secondarySystemBackground)))
                     }
                     .buttonStyle(.plain)
                 }

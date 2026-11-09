@@ -125,7 +125,7 @@ struct AlbumScreen: View {
             if next != i { withAnimation(.snappy) { columns = Self.zoomSteps[next] } }
         })
         .ignoresSafeArea(edges: .top)
-        .background(Color.black)
+        .background(Color(.systemBackground))
         .overlay(alignment: .top) { topBar(list) }
         .overlay {
             if assets == nil { ProgressView().tint(.white) }
@@ -484,7 +484,7 @@ struct AlbumsListScreen: View {
             .padding(20)
             .padding(.bottom, 90)
         }
-        .background(Color.black)
+        .background(Color(.systemBackground))
         .navigationTitle(folder?.name ?? String(localized: "Alben"))
         .onAppear { folders.use(app.userID) }
         .overlay {
@@ -658,7 +658,7 @@ struct PhotoPicker: View {
                 .padding(.bottom, 20)
             }
             .defaultScrollAnchor(.bottom)
-            .background(Color.black)
+            .background(Color(.systemBackground))
             .navigationTitle(chosen.isEmpty ? String(localized: "Objekte auswählen") : chosen.count == 1 ? String(localized: "1 Objekt ausgewählt") : String(localized: "\(chosen.count) Objekte ausgewählt"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

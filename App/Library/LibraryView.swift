@@ -87,7 +87,7 @@ struct LibraryHeader: View {
                         Menu { libraryMenu } label: {
                             Image(systemName: "line.3.horizontal.decrease")
                                 .font(.system(size: 18, weight: .semibold))
-                                .foregroundStyle(app.libraryCustomized ? Color.black : .white)
+                                .foregroundStyle(app.libraryCustomized ? Color.white : Color.primary)
                                 .frame(width: 46, height: 46)
                                 .background { if app.libraryCustomized { Circle().fill(.blue).padding(3) } }
                         }
@@ -152,7 +152,7 @@ struct TopBlur: View {
             Rectangle().fill(.ultraThinMaterial)
                 .mask(LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black, location: 0.45),
                                              .init(color: .clear, location: 1)], startPoint: .top, endPoint: .bottom))
-            LinearGradient(colors: [.black.opacity(0.7), .black.opacity(0.3), .clear], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [Color(.systemBackground).opacity(0.85), Color(.systemBackground).opacity(0.4), .clear], startPoint: .top, endPoint: .bottom)
         }
         .ignoresSafeArea(edges: .top)
         .allowsHitTesting(false)
@@ -166,7 +166,7 @@ struct BottomBlur: View {
             Rectangle().fill(.ultraThinMaterial)
                 .mask(LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: .black, location: 0.55),
                                              .init(color: .black, location: 1)], startPoint: .top, endPoint: .bottom))
-            LinearGradient(colors: [.clear, .black.opacity(0.35), .black.opacity(0.75)], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [.clear, Color(.systemBackground).opacity(0.35), Color(.systemBackground).opacity(0.75)], startPoint: .top, endPoint: .bottom)
         }
         .frame(height: 190)
         .frame(maxHeight: .infinity, alignment: .bottom)
@@ -302,7 +302,7 @@ struct AllGrid: View {
             }
             .overlay(alignment: .topLeading) {
                 if !capsule.isEmpty {
-                    Text(capsule).font(.system(size: 30, weight: .bold)).foregroundStyle(.white)
+                    Text(capsule).font(.system(size: 30, weight: .bold)).foregroundStyle(Color.primary)
                         .padding(.horizontal, 16).padding(.vertical, 6)
                         .glassEffect(.regular, in: .capsule)
                         .padding(.leading, 14).padding(.top, 118)

@@ -72,7 +72,7 @@ struct SearchView: View {
     var body: some View {
         NavigationStack(path: $path) {
             ZStack(alignment: .bottom) {
-                Color.black.ignoresSafeArea()
+                Color(.systemBackground).ignoresSafeArea()
                 ScrollView {
                     if active { activeView } else { start }
                 }

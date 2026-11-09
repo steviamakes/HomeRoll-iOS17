@@ -122,7 +122,7 @@ struct AssetGridScreen: View {
                     .ignoresSafeArea()
             }
         }
-        .background(Color.black)
+        .background(Color(.systemBackground))
         .overlay(alignment: .top) {
             ScreenHeader(title: title, subtitle: subtitle, menu: AnyView(HStack(spacing: 10) { sortMenu; if let menu { menu } }))
         }
@@ -199,7 +199,7 @@ struct CardGridScreen: View {
             }
             .padding(20)
         }
-        .background(Color.black)
+        .background(Color(.systemBackground))
         .navigationTitle(title)
     }
 }
@@ -239,7 +239,7 @@ struct PeopleScreen: View {
             }
             .padding(20)
         }
-        .background(Color.black)
+        .background(Color(.systemBackground))
         .navigationTitle(String(localized: "Personen"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

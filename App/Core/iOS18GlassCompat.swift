@@ -49,7 +49,7 @@ public extension View {
                     if let tint = style.tintColor {
                         shape.fill(tint)
                     }
-                    shape.stroke(Color.white.opacity(0.18), lineWidth: 0.7)
+                    shape.stroke(Color.primary.opacity(0.15), lineWidth: 0.7)
                 }
             }
             .clipShape(shape)
